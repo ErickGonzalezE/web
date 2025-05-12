@@ -1,10 +1,76 @@
 
+
 <html>
 <head>
   <title>Tienda Gonzalez</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
   <style>
+.filter-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+  z-index: 100;
+}
+
+#toggle-filter-btn {
+  background-color: #5CC2D3;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#toggle-filter-btn:hover {
+  background-color: #3498db;
+}
+
+.category-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 220px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.category-menu.show {
+  max-height: 600px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.category-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.category-menu li {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.category-menu li:hover {
+  background-color: #d0f3f7;
+  color: #3498db;
+}
+
+.category-menu li.active {
+  background-color: #3498db;
+  color: white;
+}
     * {
       box-sizing: border-box;
     }
@@ -54,62 +120,30 @@
       max-width: 1200px;
       margin: auto;
     }
-.filter-bar {
-  text-align: center;
-  margin: 25px auto 20px;
-  padding: 10px 20px;
-  background-color: #e0f7fa;
-  border-radius: 20px;
-  width: fit-content;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: background 0.3s ease;
-  font-weight: bold;
-  font-size: 18px;
-  color: #298b9f;
-}
-
-.filter-bar label {
-  margin-right: 10px;
-}
-
-.filter-bar select {
-  padding: 8px 16px;
-  border-radius: 10px;
-  border: 2px solid #5CC2D3;
-  font-size: 16px;
+   .product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px; /* Aumentado de 200px */
+  margin: 10px;
+  padding: 12px;
   background-color: white;
-  color: #333;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
-.filter-bar select:hover,
-.filter-bar select:focus {
-  border-color: #3498db;
-  box-shadow: 0 0 8px rgba(92, 194, 211, 0.6);
-  outline: none;
+.product:hover {
+  border-color: #5CC2D3; /* Más visible */
+  box-shadow: 0 0 16px rgba(92, 194, 211, 0.4); /* Sombra más intensa */
 }
 
-    .product {
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease;
-    }
-
-    .product:hover {
-      transform: scale(1.03);
-    }
-
-    .product img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-
+.product img {
+  width: 160px; /* Aumentado de 140px */
+  height: 160px; /* Aumentado de 140px */
+  object-fit: contain;
+  margin-bottom: 10px;
+}
     .product-content {
       padding: 15px;
       flex: 1;
@@ -159,8 +193,8 @@
       position: fixed;
       top: 20px;
       right: 20px;
-      background-color: #2ecc71;
-      color: white;
+      background-color: #F0F2F5;
+      color: #909193;
       padding: 10px 20px;
       border-radius: 25px;
       font-weight: bold;
@@ -223,14 +257,23 @@
     .close-btn {
       display: inline-block;
       margin-top: 20px;
-      background: #e74c3c;
+      background: #4C73B3;
       color: white;
       padding: 8px 20px;
       border-radius: 8px;
       cursor: pointer;
-      text-align: center;
+      text-align: left;
     }
-
+ .pagar {
+      display: inline-block;
+      margin-top: 20px;
+      background: #4C73B3;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: right;
+    }
     footer {
       background-color: #3498db;
       color: white;
@@ -245,11 +288,18 @@
 <body>
 
 <script>
-  function filterProducts() {
-    const selected = document.getElementById("category-filter").value;
-    document.querySelectorAll(".product").forEach(product => {
-      const category = product.getAttribute("data-category");
-      product.style.display = (selected === "all" || selected === category) ? "flex" : "none";
+
+  function selectCategory(element, category) {
+    // Quitar clase activa de todos los elementos
+    document.querySelectorAll('.category-menu li').forEach(li => li.classList.remove('active'));
+
+    // Activar el clicado
+    element.classList.add('active');
+
+    // Aplicar el filtro
+    document.querySelectorAll('.product').forEach(product => {
+      const cat = product.getAttribute('data-category');
+      product.style.display = (category === 'all' || cat === category) ? 'flex' : 'none';
     });
   }
 </script>
@@ -289,7 +339,7 @@
   position: fixed;
   top: 20px;
   right: 20px;
-  background: #2ecc71;
+  background: #56A5AB;
   color: white;
   padding: 12px 20px;
   border-radius: 30px;
@@ -298,7 +348,7 @@
   z-index: 9999;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 ">
-  🛒 Producto añadido
+  ➕1
 </div>
 
 <script>
@@ -373,11 +423,33 @@
     document.querySelector('.cart-button').addEventListener('click', () => toggleCart(true));
     document.querySelector('.close-btn').addEventListener('click', () => toggleCart(false));
   });
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById('toggle-filter-btn');
+    const categoryMenu = document.getElementById('category-menu');
+
+    toggleBtn.addEventListener('click', () => {
+      categoryMenu.classList.toggle('show');
+    });
+
+    window.selectCategory = function (element, category) {
+      document.querySelectorAll('.category-menu li').forEach(li => li.classList.remove('active'));
+      element.classList.add('active');
+
+      document.querySelectorAll('.product').forEach(product => {
+        const cat = product.getAttribute('data-category');
+        product.style.display = (category === 'all' || category === cat) ? 'flex' : 'none';
+      });
+    };
+  });
+
+
 </script>
 
 
   <!-- Checkbox toggle para carrito -->
- <div class="cart-button">🛒 Ver Carrito</div>
+ <div class="cart-button">🛒Carrito</div>
 
 
   <!-- Carrito modal -->
@@ -399,6 +471,7 @@
 </table>
 <p class="total">Total: $<span id="total-price">0.00</span></p>
      <div class="close-btn">Cerrar</div>
+<div class="pagar">Pagar</div>
     </div>
   </div>
 
@@ -415,18 +488,21 @@
   <center><h2 style="color:#5CC2D3;">PRODUCTOS</h2></center>
 
   <!-- Productos (muestra 100) -->
-<div class="filter-container">
-  <label for="category-filter">📂 Filtrar por categoría:</label>
-  <select id="category-filter" onchange="filterProducts()">
-    <option value="all">Todos</option>
-    <option value="cuadernos">Cuadernos</option>
-    <option value="escritura">Escritura</option>
-    <option value="arte">Arte</option>
-    <option value="tecnologia">Tecnología</option>
-    <option value="mochilas">Mochilas</option>
-    <option value="higiene">Higiene</option>
-    <option value="otros">Otros</option>
-  </select>
+<div class="filter-wrapper">
+  <button id="toggle-filter-btn">📂 Filtrar por categoría</button>
+
+  <nav id="category-menu" class="category-menu hidden">
+    <ul>
+      <li onclick="selectCategory(this, 'all')">📋 Todas</li>
+      <li onclick="selectCategory(this, 'cuadernos')">📘 Cuadernos</li>
+      <li onclick="selectCategory(this, 'escritura')">✏️ Escritura</li>
+      <li onclick="selectCategory(this, 'arte')">🎨 Arte</li>
+      <li onclick="selectCategory(this, 'tecnologia')">💻 Tecnología</li>
+      <li onclick="selectCategory(this, 'mochilas')">🎒 Mochilas</li>
+      <li onclick="selectCategory(this, 'higiene')">🧴 Higiene</li>
+      <li onclick="selectCategory(this, 'otros')">📦 Otros</li>
+    </ul>
+  </nav>
 </div>
   <main>
     <div class="product">
@@ -1445,6 +1521,37 @@
     &copy; 2025 Tienda Online Gonzalez -  3ero N Bachillerato Tecnico
   </footer>
 
+
+<script>
+  const toggleBtn = document.getElementById('toggle-filter-btn');
+  const categoryMenu = document.getElementById('category-menu');
+
+  // Mostrar/ocultar menú
+  toggleBtn.onclick = function () {
+    if (categoryMenu.classList.contains('visible')) {
+      categoryMenu.classList.remove('visible');
+    } else {
+      categoryMenu.classList.add('visible');
+    }
+  };
+
+  // Selección de categoría
+  function selectCategory(element, category) {
+    // Visual activo
+    document.querySelectorAll('.category-menu li').forEach(li => li.classList.remove('active'));
+    element.classList.add('active');
+
+    // Filtrado
+    document.querySelectorAll('.product').forEach(product => {
+      const cat = product.getAttribute('data-category');
+      product.style.display = (category === 'all' || category === cat) ? 'flex' : 'none';
+    });
+
+   
+</script>
+
 </body>
 </html>
+
+
 
