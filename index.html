@@ -1,1557 +1,284 @@
-
-
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <title>Tienda Gonzalez</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-.filter-wrapper {
-  position: relative;
-  display: inline-block;
-  margin: 20px;
-  z-index: 100;
-}
+<BODY BGCOLOR="BLACK">
+<IMG SRC="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBxDx2XtWS1kMPkiqss24vLlWNDPrcgIrpq_2Y1oT5GzXOtcvRNtVcKO5ZxYMi5EgQ6G8Fjww36KfvCKIeIsCDxegPR1yF6ePRsy-LZAi0dZaDANyPPwv50TWLPJdd5W7x-m2m0-bXWdqq/s1600/NID.png" ALIGN="LEFT" HEIGH="130" WIDTH="130">
 
-#toggle-filter-btn {
-  background-color: #5CC2D3;
-  color: white;
-  border: none;
+<IMG SRC="nid.gif" ALIGN="RIGHT" HEIGH="400" WIDTH="200">
+
+<BR><BR><BR><BR><BR><br>
+<FONT COLOR="#41bc4f">
+<B>
+<P ALIGN="RIGHT">
+Curso: 2do N
+</B> 
+</FONT>
+
+<FONT COLOR="#41bc4f">
+<B>
+<P ALIGN="LEFT">
+Nombre: Erick Jostyn <br>
+Gonzalez Espinoza
+</B>
+</FONT>
+
+<CENTER>
+<FONT FACE="IMPACT" SIZE=30>
+<Titlee><BGCOLOR="BLACK">
+<FONT COLOR="PERU">
+<MARQUEE>
+P
+</MARQUEE>
+</FONT>
+<BR>
+<FONT COLOR="RED">
+R
+</FONT>
+<FONT COLOR="BLUE">
+O
+</FONT>
+<FONT COLOR="WHITE">
+Y
+</FONT>
+<FONT COLOR="YELLOW">
+E
+</FONT>
+<FONT COLOR="GREEN">
+C
+</FONT>
+<FONT COLOR="ORANGE">
+T
+</FONT>
+<FONT COLOR="PURPLE">
+O
+</FONT>
+_
+<FONT COLOR="AQUA">
+D
+</FONT>
+<FONT COLOR="WHITE">
+E
+</FONT>
+_
+<FONT COLOR="BLUE">
+Á
+</FONT>
+<FONT COLOR="LIME">
+R
+</FONT>
+<FONT COLOR="SALMON">
+E
+</FONT>
+<FONT COLOR="BLUE">
+A
+</FONT>
+_
+<FONT COLOR="TEAL">
+T
+</FONT>
+<FONT COLOR="GREEN">
+É
+</FONT>
+<FONT COLOR="AQUA">
+C
+</FONT>
+<FONT COLOR="ORANGE">
+N
+</FONT>
+<FONT COLOR="RED">
+I
+</FONT>
+<FONT COLOR="BLUE">
+C
+</FONT>
+<FONT COLOR="LIME">
+A
+</FONT>
+_
+<FONT COLOR="#41bc4f">
+2025-202
+</FONT>
+<BR>
+<MARQUEE>
+<FONT COLOR="YELLOW">
+6
+</FONT>
+</MARQUEE>
+</Titlee>
+
+</FONT>
+<hr size="8px" color="green">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+      #muteBtn {
+  position: fixed;
+  bottom: 10px;         /* Lo coloca cerca del borde inferior */
+  right: 10px;           /* Lo coloca cerca del borde izquierdo */
   padding: 10px 20px;
   font-size: 16px;
-  border-radius: 10px;
+  z-index: 1000;
+  background-color: black;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
+        
+        body {
 
-#toggle-filter-btn:hover {
-  background-color: #3498db;
-}
+             body {
+      height: 300px;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* Evita que el contenido se desborde por el video de fondo */
+        }
 
-.category-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 220px;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.4s ease;
-  z-index: 999;
-  opacity: 0;
-  pointer-events: none;
-}
+        ul {
+            list-style-type: none;
+            margin: 70;
+            padding: 0;
+            display: inline-block;
+        }
 
-.category-menu.show {
-  max-height: 600px;
-  opacity: 1;
-  pointer-events: auto;
-}
+        li {
+            display: inline-block;
+            position: relative;
+        }
 
-.category-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+        li:hover ul {
+            display: block;
+        }
 
-.category-menu li {
-  padding: 12px 16px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
+        ul ul {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
 
-.category-menu li:hover {
-  background-color: #d0f3f7;
-  color: #3498db;
-}
+        ul ul li {
+            width: 100%;
+        }
 
-.category-menu li.active {
-  background-color: #3498db;
-  color: white;
-}
-    * {
-      box-sizing: border-box;
-    }
+        a {
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            color: #00FF00; /* Letras verdes brillantes */
+            background: #000000; /* Fondo negro */
+            border: 2px solid #00FF00; /* Borde verde brillante */
+            border-radius: 5px; /* Bordes redondeados */
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f0f2f5;
-      color: #333;
-    }
+        a:hover {
+            background: #333333; /* Fondo ligeramente gris al pasar el ratón */
+        }
 
-    /* Banner */
-    .banner {
-      background: url('https://img.pikbest.com/backgrounds/20190819/school-season-promotion--opening-school--school-school-banner-illustration_1901829.jpg!sw800') center/cover no-repeat;
-      height: 250px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
-      position: relative;
-    }
+        /* Estilo para el video de fondo */
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que el video cubra toda la pantalla */
+            z-index: -1; /* Coloca el video detrás de los demás elementos */
+        }
 
-    .banner h1 {
-      font-size: 3rem;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 10px 30px;
-      border-radius: 10px;
-    }
-
-    .logo {
-      position: absolute;
-      left: 20px;
-      top: 20px;
-    }
-
-    .logo img {
-      width: 60px;
-      height: 60px;
-    }
-
-    main {
-      padding: 30px 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-   .product {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 280px; /* Aumentado de 200px */
-  margin: 10px;
-  padding: 12px;
-  background-color: white;
-  border: 2px solid transparent;
-  border-radius: 12px;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product:hover {
-  border-color: #5CC2D3; /* Más visible */
-  box-shadow: 0 0 16px rgba(92, 194, 211, 0.4); /* Sombra más intensa */
-}
-
-.product img {
-  width: 160px; /* Aumentado de 140px */
-  height: 160px; /* Aumentado de 140px */
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-    .product-content {
-      padding: 15px;
-      flex: 1;
-    }
-
-    .product h3 {
-      font-size: 18px;
-      margin: 0 0 10px;
-    }
-
-    .product p {
-      font-size: 14px;
-      color: #666;
-      margin: 0 0 15px;
-    }
-
-    .price {
-      font-size: 18px;
-      color: #2ecc71;
-      font-weight: bold;
-    }
-
-    .product button {
-      margin-top: auto;
-      background-color: #3498db;
-      color: white;
-      border: none;
-      padding: 10px;
-      width: 100%;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-      border-bottom-left-radius: 12px;
-      border-bottom-right-radius: 12px;
-    }
-
-    .product button:hover {
-      background-color: #2980b9;
-    }
-
-    /* Ver carrito toggle */
-    #toggle-cart {
-      display: none;
-    }
-
-    .cart-button {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: #F0F2F5;
-      color: #909193;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-weight: bold;
-      text-decoration: none;
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      cursor: pointer;
-    }
-
-    .cart-modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0,0,0,0.6);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 999;
-    }
-
-    #toggle-cart:checked + .cart-modal {
-      display: flex;
-    }
-
-    .cart-content {
-      background: white;
-      padding: 20px 30px;
-      border-radius: 12px;
-      max-width: 500px;
-      width: 100%;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-
-    .cart-content h2 {
-      margin-top: 0;
-      font-size: 24px;
-    }
-
-    .cart-content table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-
-    .cart-content th, .cart-content td {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-    }
-
-    .total {
-      text-align: right;
-      margin-top: 15px;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .close-btn {
-      display: inline-block;
-      margin-top: 20px;
-      background: #4C73B3;
-      color: white;
-      padding: 8px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      text-align: left;
-    }
- .pagar {
-      display: inline-block;
-      margin-top: 20px;
-      background: #4C73B3;
-      color: white;
-      padding: 8px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      text-align: right;
-    }
-    footer {
-      background-color: #3498db;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 30px;
-    }
-  </style>
+        /* Estilo para el audio de fondo */
+        audio {
+            display: none; /* Oculta el reproductor de audio */
+        }
+    </style>
+    <title>Pagina de html</title>
 </head>
-
-
 <body>
 
-<script>
+    <!-- Video de fondo -->
+    <video autoplay loop muted>
+        <source src="matrix.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
 
-  function selectCategory(element, category) {
-    // Quitar clase activa de todos los elementos
-    document.querySelectorAll('.category-menu li').forEach(li => li.classList.remove('active'));
+    <!-- Música de fondo -->
+ <button id="muteBtn">🔇</button>
+     <audio id="musica" autoplay loop>
+        <source src="jump.mp3" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
 
-    // Activar el clicado
-    element.classList.add('active');
+    <div>
+      <ul>
+    <li>
+        <a href="proyecto/programacion.html" target="_blank">Programación y Base de Datos</a>
+        <ul>
+            <li><a href="proyecto/programacion.html#trimestre1" target="_blank">Trimestre 1</a></li>
+            <li><a href="proyecto/programacion.html#trimestre2" target="_blank">Trimestre 2</a></li>
+            <li><a href="proyecto/programacion.html#trimestre3" target="_blank">Trimestre 3</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="proyecto/diseño.html" target="_blank">Diseño y Desarrollo Web</a>
+        <ul>
+            <li><a href="proyecto/diseño.html#trimestre1" target="_blank">Trimestre 1</a></li>
+            <li><a href="proyecto/diseño.html#trimestre2" target="_blank">Trimestre 2</a></li>
+            <li><a href="proyecto/diseño.html#trimestre3" target="_blank">Trimestre 3</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="proyecto/sistemas.html" target="_blank">Sistemas Operativos y Redes</a>
+        <ul>
+            <li><a href="proyecto/sistemas.html#trimestre1" target="_blank">Trimestre 1</a></li>
+            <li><a href="proyecto/sistemas.html#trimestre2" target="_blank">Trimestre 2</a></li>
+            <li><a href="proyecto/sistemas.html#trimestre3" target="_blank">Trimestre 3</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="proyecto/soporte.html" target="_blank">Soporte Técnico</a>
+        <ul>
+            <li><a href="proyecto/soporte.html#trimestre1" target="_blank">Trimestre 1</a></li>
+            <li><a href="proyecto/soporte.html#trimestre2" target="_blank">Trimestre 2</a></li>
+            <li><a href="proyecto/soporte.html#trimestre3" target="_blank">Trimestre 3</a></li>
+        </ul>
+    </li>
+</ul>
+    </div>
 
-    // Aplicar el filtro
-    document.querySelectorAll('.product').forEach(product => {
-      const cat = product.getAttribute('data-category');
-      product.style.display = (category === 'all' || cat === category) ? 'flex' : 'none';
-    });
-  }
-</script>
+<HR color=green>
 
-<script>
-  const categoryKeywords = {
-    cuadernos: ["cuaderno", "libreta", "libro", "enciclopedia", "harry", "diccionario", "agenda"],
-    escritura: ["bolígrafo", "lápiz", "pluma", "sacapuntas", "borrador", "resaltador", "marcador", "corrector", "esferográfico"],
-    arte: ["pintura", "crayones", "témpera", "pincel", "espátula", "bloc", "dibujo", "carboncillo", "pasteles", "foamy", "cartulina", "papel", "caja", "set", "paleta"],
-    tecnologia: ["tablet", "laptop", "calculadora", "mouse", "teclado", "usb", "disco", "audífonos", "bocina", "cable"],
-    mochilas: ["mochila", "estuche", "lonchera", "cartuchera"],
-    higiene: ["gel", "toallitas", "mascarilla"],
-    otros: [] // por si algo no encaja
-  };
+<IMG SRC="https://media.tenor.com/D_wJdL-SnpgAAAAM/phonk-russian-badger.gif" WIDTH=400 HEIGHT=170 ALIGN="LEFT">
 
-  function asignarCategorias() {
-    document.querySelectorAll(".product").forEach(product => {
-      const name = product.querySelector("h3")?.textContent.toLowerCase();
-      let categoryFound = "otros";
 
-      for (const [category, keywords] of Object.entries(categoryKeywords)) {
-        if (keywords.some(keyword => name.includes(keyword))) {
-          categoryFound = category;
-          break;
-        }
-      }
 
-      product.setAttribute("data-category", categoryFound);
-    });
-  }
+   <script>
+    let musicaIniciada = false;
+    const audio = document.getElementById('musica');
+    const muteBtn = document.getElementById('muteBtn');
 
-  document.addEventListener("DOMContentLoaded", asignarCategorias);
-</script>
-
-<!-- Indicador visual de producto añadido -->
-<div id="cart-toast" style="
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: #56A5AB;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 30px;
-  font-weight: bold;
-  display: none;
-  z-index: 9999;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-">
-  ➕1
-</div>
-
-<script>
-  let cart = [];
-
-  function addToCart(productName, productPrice) {
-    let product = cart.find(item => item.name === productName);
-    if (product) {
-      product.quantity++;
-    } else {
-      cart.push({ name: productName, price: productPrice, quantity: 1 });
-    }
-    updateCart();
-    showToast();
-  }
-
-  function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCart();
-  }
-
-  function updateCart() {
-    const cartTable = document.getElementById('cart-items');
-    cartTable.innerHTML = '';
-    let total = 0;
-    cart.forEach((item, index) => {
-      total += item.price * item.quantity;
-      const row = document.createElement('tr');
-      row.innerHTML = `
-        <td>${item.name}</td>
-        <td>${item.quantity}</td>
-        <td>$${(item.price * item.quantity).toFixed(2)}</td>
-        <td><button onclick="removeFromCart(${index})" style="background:#e74c3c;color:white;border:none;padding:5px 10px;border-radius:5px;cursor:pointer;">❌</button></td>
-      `;
-      cartTable.appendChild(row);
-    });
-    document.getElementById('total-price').textContent = total.toFixed(2);
-  }
-
-  function showToast() {
-    const toast = document.getElementById('cart-toast');
-    toast.style.display = 'block';
-    toast.style.opacity = '1';
-    setTimeout(() => {
-      toast.style.transition = 'opacity 0.5s ease';
-      toast.style.opacity = '0';
-    }, 1000);
-    setTimeout(() => {
-      toast.style.display = 'none';
-    }, 1500);
-  }
-
-  function toggleCart(open) {
-    const modal = document.querySelector('.cart-modal');
-    modal.style.display = open ? 'flex' : 'none';
-  }
-
-  // Automatiza botones al cargar
-  document.addEventListener('DOMContentLoaded', () => {
-    const products = document.querySelectorAll('.product');
-    products.forEach(product => {
-      const name = product.querySelector('h3')?.textContent.trim();
-      const priceText = product.querySelector('.price')?.textContent.replace('$', '').replace(',', '.').trim();
-      const price = parseFloat(priceText);
-      const button = product.querySelector('button');
-      if (name && !isNaN(price) && button) {
-        button.addEventListener('click', () => addToCart(name, price));
+    document.addEventListener('click', () => {
+      if (!musicaIniciada) {
+        audio.play().then(() => {
+          musicaIniciada = true;
+          muteBtn.style.display = 'inline-block';
+          console.log("🎵 Música iniciada");
+        }).catch(error => {
+          console.error("❌ No se pudo reproducir el audio:", error);
+        });
       }
     });
 
-    // Abrir/Cerrar carrito
-    document.querySelector('.cart-button').addEventListener('click', () => toggleCart(true));
-    document.querySelector('.close-btn').addEventListener('click', () => toggleCart(false));
-  });
-
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggleBtn = document.getElementById('toggle-filter-btn');
-    const categoryMenu = document.getElementById('category-menu');
-
-    toggleBtn.addEventListener('click', () => {
-      categoryMenu.classList.toggle('show');
+    muteBtn.addEventListener('click', (e) => {
+      e.stopPropagation(); // Evita que se vuelva a intentar reproducir
+      audio.muted = !audio.muted;
+      muteBtn.textContent = audio.muted ? '🔊' : '🔇';
     });
-
-    window.selectCategory = function (element, category) {
-      document.querySelectorAll('.category-menu li').forEach(li => li.classList.remove('active'));
-      element.classList.add('active');
-
-      document.querySelectorAll('.product').forEach(product => {
-        const cat = product.getAttribute('data-category');
-        product.style.display = (category === 'all' || category === cat) ? 'flex' : 'none';
-      });
-    };
-  });
-
-
-</script>
-
-
-  <!-- Checkbox toggle para carrito -->
- <div class="cart-button">🛒Carrito</div>
-
-
-  <!-- Carrito modal -->
-  <div class="cart-modal">
-    <div class="cart-content">
-      <h2>Tu carrito</h2>
-     <table>
-  <thead>
-    <tr>
-      <th>Producto</th>
-      <th>Cantidad</th>
-      <th>Precio</th>
-      <th>Eliminar</th>
-    </tr>
-  </thead>
-  <tbody id="cart-items">
-    <!-- Aquí se agregan los productos dinámicamente -->
-  </tbody>
-</table>
-<p class="total">Total: $<span id="total-price">0.00</span></p>
-     <div class="close-btn">Cerrar</div>
-<div class="pagar">Pagar</div>
-    </div>
-  </div>
-
-  <!-- Banner con logo -->
-  <div class="banner">
-    <div class="logo">
-      <img src="https://images.vexels.com/media/users/3/224234/isolated/preview/ff7c525c1c3e1bef640644542001e1fd-logotipo-de-la-escuela-en-linea.png" alt="Logo Tienda">
-    </div>
-    <h1>Bienvenidos a mi Tienda online</h1>
-  </div>
-
-  <center><h3><i>De Gonzalez Espinoza Erick Jostyn</i></h3></center>
-  <hr>
-  <center><h2 style="color:#5CC2D3;">PRODUCTOS</h2></center>
-
-  <!-- Productos (muestra 100) -->
-<div class="filter-wrapper">
-  <button id="toggle-filter-btn">📂 Filtrar por categoría</button>
-
-  <nav id="category-menu" class="category-menu hidden">
-    <ul>
-      <li onclick="selectCategory(this, 'all')">📋 Todas</li>
-      <li onclick="selectCategory(this, 'cuadernos')">📘 Cuadernos</li>
-      <li onclick="selectCategory(this, 'escritura')">✏️ Escritura</li>
-      <li onclick="selectCategory(this, 'arte')">🎨 Arte</li>
-      <li onclick="selectCategory(this, 'tecnologia')">💻 Tecnología</li>
-      <li onclick="selectCategory(this, 'mochilas')">🎒 Mochilas</li>
-      <li onclick="selectCategory(this, 'higiene')">🧴 Higiene</li>
-      <li onclick="selectCategory(this, 'otros')">📦 Otros</li>
-    </ul>
-  </nav>
-</div>
-  <main>
-    <div class="product">
-<img src="https://prod.isg.bruneau.media/asset/aHR0cHM6Ly93d3cubGlkZXJwYXBlbC5jb20vcmVzb3VyY2VzL2ltZy9wcm9kdWN0cy8xNTU4MjRnLmpwZw==/?height=477&quality=85&width=477" alt="Bolígrafo BIC">
-      <div class="product-content">
-        <h3>Bolígrafo BIC Cristal Azul</h3>
-        <p>Ideal para escritura suave y precisa.</p>
-        <p class="price">$0,20</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-
-    <div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg7N0k0k3ihG3nW-il89qFFQtw7D1xTzWafQ&s" alt="Lápiz HB">
-      <div class="product-content">
-        <h3>Lápiz HB</h3>
-        <p>Perfecto para dibujos y escritura diaria.</p>
-        <p class="price">$0,20</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-
-    <div class="product">
-      <img src="https://www.supermaxi.com/wp-content/uploads/2024/12/items2Figm2F1000x10002F7702111376571-1.jpg.webp" alt="Cuaderno 100 hojas">
-      <div class="product-content">
-        <h3>Cuaderno Universitario 100 Hojas</h3>
-        <p>Diseño práctico para tus clases.</p>
-        <p class="price">$1,40</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://libreriairbe.com/wp-content/uploads/2023/05/Boligrafos-Punta-Fina-0.7-mm-NATARAJ-621.jpg">
-      <div class="product-content">
-        <h3>Bolígrafo Nataraj PF</h3>
-        <p>Colores variados, punta fina precisa.</p>
-        <p class="price">$0,40</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://img.uline.com/is/image/uline/S-21759BL?$Mobile_Zoom$">
-      <div class="product-content">
-        <h3>Pluma de gel negra</h3>
-        <p>Escritura fluida, ideal para notas.</p>
-        <p class="price">$1,19</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.zoco.com.ec/system/storage/products/5ZfOce5E31VnZlPqCojZKX2oMP4KiJgTxi7DiXvq.jpeg">
-      <div class="product-content">
-        <h3>Esferográfico punta fina</h3>
-        <p>Tinta uniforme, ideal para escribir.</p>
-        <p class="price">$0,20</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://kywiec.vtexassets.com/arquivos/ids/179445/678000.jpg?v=638388675078730000">
-      <div class="product-content">
-        <h3>Lápiz bicolor</h3>
-        <p>Rojo y azul, útil para corrección.</p>
-        <p class="price">$0,25</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://papelisimo.com.ec/wp-content/uploads/2024/07/Proyecto-nuevo-73-1.jpg">
-      <div class="product-content">
-        <h3>Marcador permanente</h3>
-        <p>Marca superficies, tinta indeleble resistente.</p>
-        <p class="price">$0,50</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.helpcompartes.com/16372-superlarge_default/4006381160407-marcador-pizarra-cy-plan-641-punta-gruesa.jpg">
-      <div class="product-content">
-        <h3>Marcador de pizarra </h3>
-        <p>Para pizarras blancas, fácil limpieza.</p>
-        <p class="price">$0,60</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYux06YgpAKYnuiQ38qZU6Zi2DgWsQ4TGMSQ&s">
-      <div class="product-content">
-        <h3>Marcador de tiza líquida</h3>
-        <p>Brillante, para vidrio o pizarras.</p>
-        <p class="price">$0,70</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.tiatula.com.ec/tienda/wp-content/uploads/2020/05/8854556000524.jpg">
-      <div class="product-content">
-        <h3>Corrector líquido</h3>
-        <p>Cubre errores rápidamente, fácil uso.</p>
-        <p class="price">$0,80</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlS_XBWQ26w_IAQfaJ9jDx1eBV9O6qnBwQTg&s">
-      <div class="product-content">
-        <h3>Resaltador fluorescente</h3>
-        <p>Colores vivos para subrayar textos.</p>
-        <p class="price">$0,75</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSeIlMCv_tAp8kJ8cAqFGqDXms6WVwnVNDXA&s">
-      <div class="product-content">
-        <h3>Sacapuntas metálico</h3>
-        <p>Afilado rápido, estructura resistente.</p>
-        <p class="price">$0,50</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-
-<div class="product">
-      <img src="https://walmarthn.vtexassets.com/arquivos/ids/200097/Borrador-Pelikan-Blanco-Al30-Blister-Unidad-1-6197.jpg?v=637752156897900000">
-      <div class="product-content">
-        <h3>Borrador blanco</h3>
-        <p>Suave, no daña el papel.</p>
-        <p class="price">$0,20</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://juanmarcet.com/wp-content/uploads/2022/03/0201134141-1.jpg">
-      <div class="product-content">
-        <h3>Caja 12 lápices colores</h3>
-        <p>Colores intensos, para colorear tareas.</p>
-        <p class="price">$1,25</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://comsucre.com.ec/wp-content/uploads/2024/10/SH.CY_.6612PRO.png">
-      <div class="product-content">
-        <h3>Caja 12 crayones</h3>
-        <p>Cera no tóxica, fácil uso.</p>
-        <p class="price">$1,00</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ00OSqhxuwRvaD4qpzZoxfAqK3nKukd3UnXg&s">
-      <div class="product-content">
-        <h3>Caja 12 marcadores escolares</h3>
-        <p>Lavables, colores vivos y seguros.</p>
-        <p class="price">$1,25</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://materiales.com.bo/cdn/shop/products/58-8629-0_Product_Core_Markers_Glitter-Markers_Dazzling-Colors_6ct_H.jpg?v=1574728994">
-      <div class="product-content">
-        <h3>Caja 6 marcadores escolares</h3>
-        <p>Compacto, ideal para colorear básico.</p>
-        <p class="price">$0,80</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://comsucre.com.ec/wp-content/uploads/2022/05/DR.TE_.10-1.png">
-      <div class="product-content">
-        <h3>Caja 6 témperas</h3>
-        <p>Pintura escolar, lavable, colores básicos.</p>
-        <p class="price">$1,50</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://comsucre.com.ec/wp-content/uploads/2023/03/DR-TE-50-MONTAJE.png">
-      <div class="product-content">
-        <h3>Caja 12 témperas</h3>
-        <p>Más variedad, ideal para arte.</p>
-        <p class="price">$2,50</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.cherimoya.pe/wp-content/uploads/2023/10/BH003276-negro.png">
-      <div class="product-content">
-        <h3>Pincel N° 8</h3>
-        <p>Trazos medianos, cerdas suaves.</p>
-        <p class="price">$0,60</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://libreriairbe.com/wp-content/uploads/2021/06/Pincel-Plano-para-Oleo-y-Acrilico-Color-Aleatorio-No-12.jpg">
-      <div class="product-content">
-        <h3>Pincel N° 12</h3>
-        <p>Grueso, para rellenos y trazos.</p>
-        <p class="price">$0,70</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://comsucre.com.ec/wp-content/uploads/2023/10/SH.GO_.120.png">
-      <div class="product-content">
-        <h3>Goma blanca 120g</h3>
-        <p>Pegamento escolar para papel y cartón.</p>
-        <p class="price">$0,90</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.tiatula.com.ec/tienda/wp-content/uploads/2018/08/7750082003408.jpg">
-      <div class="product-content">
-        <h3>Goma líquida blanca 120g </h3>
-        <p>Pegamento fluido, seca rápidamente.</p>
-        <p class="price">$1,00</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.supermaxi.com/wp-content/uploads/2024/08/items2Figm2F1500x15002F8003511426347-1.jpg">
-      <div class="product-content">
-        <h3>Tijera punta redonda</h3>
-        <p>Segura, especial para niños pequeños.</p>
-        <p class="price">$1,00</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://comsucre.com.ec/wp-content/uploads/2022/11/RE-R-30.png">
-      <div class="product-content">
-        <h3>Regla 30 cm</h3>
-        <p>Precisión para medir o dibujar.</p>
-        <p class="price">$0,80</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJIuZ8WYOsGkvk82W-vGA_0M-5SMCjvXGQow&s">
-      <div class="product-content">
-        <h3>Juego geométrico</h3>
-        <p>Escuadra, regla y transportador escolar.</p>
-        <p class="price">$1,00</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.mijugueteria.com.ec/wp-content/uploads/2023/11/40421053_01.jpg">
-      <div class="product-content">
-        <h3>Compás escolar</h3>
-        <p>Traza círculos precisos fácilmente.</p>
-        <p class="price">$2,30</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://improstock.com.ar/wp-content/uploads/2022/08/1-28-300x300.jpg">
-      <div class="product-content">
-        <h3>Calculadora sencilla</h3>
-        <p>Operaciones básicas, portátil y ligera.</p>
-        <p class="price">$5,00</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.casio.com/content/dam/casio/product-info/locales/latin/es-ar/calc/product/scientific/F/FX/FX9/fx-991ESPLUS/assets/fx-991ESPLUS_Seq1.jpg.transform/main-visual-sp/image.jpg">
-      <div class="product-content">
-        <h3>Calculadora científica FX-991ES</h3>
-        <p>Operaciones básicas, portátil y ligera.</p>
-        <p class="price">$35,99</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://i0.wp.com/aguirrepapelerias.com/wp-content/uploads/2021/04/7861098301041.png?fit=2000%2C2000&ssl=1">
-      <div class="product-content">
-        <h3>Cuaderno 50 hojas grapado </h3>
-        <p>Compacto y ligero para uso diario.</p>
-        <p class="price">$0,55</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://m.media-amazon.com/images/I/61geX3U9OmL.jpg">
-      <div class="product-content">
-        <h3>Calculadora científica FX-300MS</h3>
-        <p>Funciones esenciales, precio accesible.</p>
-        <p class="price">$13,95</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.clippapeleria.com/wp-content/uploads/2022/10/CUADERNO_GRAPADO_060_HOJAS_4_LINEAS.jpg">
-      <div class="product-content">
-        <h3>Cuaderno 20 hojas grapado</h3>
-        <p>Pequeño, ideal para tareas breves.</p>
-        <p class="price">$0,30</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://i0.wp.com/aguirrepapelerias.com/wp-content/uploads/2021/04/7861098309207.png?fit=2000%2C2000&ssl=1">
-      <div class="product-content">
-        <h3>Cuaderno 100 hojas grapado</h3>
-        <p>Práctico para materias escolares básicas.</p>
-        <p class="price">$0,85</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNmqj40IKuLrnzUWzKcItKiT1NZ2GkyY_pgw&s">
-      <div class="product-content">
-        <h3>Cuaderno 100 hojas universitario</h3>
-        <p>Espiralado, ideal para apuntes largos.</p>
-        <p class="price">$1,40</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://comsucre.com.ec/wp-content/uploads/2022/08/A.US_.13-pack.png">
-      <div class="product-content">
-        <h3>Cuaderno universitario con sticker</h3>
-        <p>Incluye etiqueta para identificar materias.</p>
-        <p class="price">$1,60</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://comsucre.com.ec/wp-content/uploads/2023/02/PM-UD-3327-7.png">
-      <div class="product-content">
-        <h3>Cuaderno 200 hojas universitario</h3>
-        <p>Mayor capacidad, resistente y duradero.</p>
-        <p class="price">$3,90</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://coquito.ec/1223-large_default/cuaderno-academico-100-hojas-norma-.jpg">
-      <div class="product-content">
-        <h3>Cuaderno 100 hojas cosido</h3>
-        <p>Encuadernación firme, uso prolongado.</p>
-        <p class="price">$1,35</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://i0.wp.com/aguirrepapelerias.com/wp-content/uploads/2022/06/7702111397675.png?fit=1200%2C1200&ssl=1">
-      <div class="product-content">
-        <h3>Cuaderno 60 hojas junior</h3>
-        <p>Pequeño, ideal para niños escolares.</p>
-        <p class="price">$0,80</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://comsucre.com.ec/wp-content/uploads/2022/08/A.J.11-4.png">
-      <div class="product-content">
-        <h3>Cuaderno 100 hojas junior</h3>
-        <p>Formato compacto, uso escolar general.</p>
-        <p class="price">$1,00</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.tiatula.com.ec/tienda/wp-content/uploads/2022/05/7862108441337.jpg">
-      <div class="product-content">
-        <h3>Cuaderno 200 hojas junior</h3>
-        <p>Capacidad media, diseño infantil.</p>
-        <p class="price">$2,00</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk-XIjLOU29NwN3mc-HNzyI7Ib9hh2RvDdXg&s">
-      <div class="product-content">
-        <h3>Cuaderno mixto 30 hojas</h3>
-        <p>Rayado y cuadriculado combinado.</p>
-        <p class="price">$0,90</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://juanmarcet.com/wp-content/uploads/2022/03/0202100421-1.jpg">
-      <div class="product-content">
-        <h3>Libreta No. 1</h3>
-        <p>Tamaño pequeño, para notas rápidas.</p>
-        <p class="price">$0,55</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://i0.wp.com/aguirrepapelerias.com/wp-content/uploads/2022/06/7862102582449.png?fit=1200%2C1200&ssl=1">
-      <div class="product-content">
-        <h3>Libreta No. 2</h3>
-        <p>Ideal para listas o apuntes.</p>
-        <p class="price">$0,70</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://comsucre.com.ec/wp-content/uploads/2022/12/pack.png">
-      <div class="product-content">
-        <h3>Cuaderno dibujo No. 5</h3>
-        <p>Papel resistente para colorear.</p>
-        <p class="price">$0,70</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.inpapel.com/inpapel/imagenes/c_C203408-g.jpg">
-      <div class="product-content">
-        <h3>Cuaderno croquis No. 12</h3>
-        <p>Especial para dibujo artístico técnico.</p>
-        <p class="price">$0,75</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://neexos.com/escritorio/documentos/productos/BD250EE32652.webp">
-      <div class="product-content">
-        <h3>Cuaderno contabilidad 50 hojas</h3>
-        <p>Columnas contables para práctica financiera.</p>
-        <p class="price">$0,90</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://i0.wp.com/aguirrepapelerias.com/wp-content/uploads/2022/01/7862108440538.png?fit=1200%2C1200&ssl=1">
-      <div class="product-content">
-        <h3>Cuaderno contabilidad 100 hojas</h3>
-        <p>Más hojas, ideal para ejercicios.</p>
-        <p class="price">$1,80</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://officemax.vtexassets.com/arquivos/ids/1357588-800-1067?v=638158889484770000&width=800&height=1067&aspect=true">
-      <div class="product-content">
-        <h3>Cuaderno Five Star 200 hojas</h3>
-        <p>Alta calidad, múltiples materias.</p>
-        <p class="price">$14,99</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://cotiza.adheplast.com/wp-content/uploads/2022/06/acrilicos_Mesa-de-trabajo-1.jpg">
-      <div class="product-content">
-        <h3>Set acrílicos (12 colores)</h3>
-        <p>Pintura artística, colores intensos variados.</p>
-        <p class="price">$3,75</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://kywiec.vtexassets.com/arquivos/ids/162219/14109.jpg?v=638388493505130000">
-      <div class="product-content">
-        <h3>Pintura Kits Quinde 10 colores</h3>
-        <p>Témperas escolares de alta calidad.</p>
-        <p class="price">$9,19</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://officemax.vtexassets.com/arquivos/ids/1383285-800-1067?v=638259933006000000&width=800&height=1067&aspect=true">
-      <div class="product-content">
-        <h3>Cartulina tamaño carta </h3>
-        <p>Papel grueso, colores surtidos, para manualidades.</p>
-        <p class="price">$0,20</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-
-<div class="product">
-      <img src="https://www.libreriailusion.com/wp-content/uploads/2016/03/16-Funda-de-Cartulinas-A4.png">
-      <div class="product-content">
-        <h3>Cartulina tamaño A4 </h3>
-        <p>Ideal para trabajos y presentaciones escolares.</p>
-        <p class="price">$0,25</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://panamericana.vtexassets.com/arquivos/ids/388178/foamy-carta-21-5-cm-x-28-cm-x-10-unidades-7707257270479.jpg?v=637526344179730000">
-      <div class="product-content">
-        <h3>Foamy tamaño carta </h3>
-        <p>Goma EVA de colores surtidos.</p>
-        <p class="price">$0,30</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://comsucre.com.ec/wp-content/uploads/2022/05/LM-PE-S-colores.png">
-      <div class="product-content">
-        <h3>Foamy escarchado tamaño carta</h3>
-        <p>Con brillo, ideal para decorar.</p>
-        <p class="price">$0,35</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2eqj7Wm-TVWGIMkNDnk_NTmA0luStnkwypA&s">
-      <div class="product-content">
-        <h3>Papel crepé colores surtidos </h3>
-        <p>Papel flexible, perfecto para decorar.</p>
-        <p class="price">$0,20</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://comsucre.com.ec/wp-content/uploads/2024/06/PA.C.10-OPEN-A.png">
-      <div class="product-content">
-        <h3>Papel construcción colores </h3>
-        <p>Papel colorido para recortar o pegar.</p>
-        <p class="price">$0,25</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-
-<div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHeLOHN3YfuE39xZyL4L9ZFaw1E1vDLJXuiQ&s">
-      <div class="product-content">
-        <h3>Papel lustrillo metalizado </h3>
-        <p>Acabado brillante, uso decorativo.</p>
-        <p class="price">$0,30</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-
-<div class="product">
-      <img src="https://www.tiatula.com.ec/tienda/wp-content/uploads/2023/08/7861161206983.jpg">
-      <div class="product-content">
-        <h3>Silicona líquida 60 ml </h3>
-        <p>Adhesivo transparente para manualidades.</p>
-        <p class="price">$0,80</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-
-<div class="product">
-      <img src="https://kywiec.vtexassets.com/arquivos/ids/159436/37850-1.jpg?v=638380026729270000">
-      <div class="product-content">
-        <h3>Silicona caliente (barra)</h3>
-        <p>Para pistola, pega fuerte.</p>
-        <p class="price">$0,25</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-
-<div class="product">
-      <img src="https://kywiec.vtexassets.com/arquivos/ids/179995/738301-2.jpg?v=638388678365170000">
-      <div class="product-content">
-        <h3>Pistola de silicona pequeña</h3>
-        <p>Herramienta básica para pegar manualidades.</p>
-        <p class="price">$3,99</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://juanmarcet.com/wp-content/uploads/2021/12/000T-888.jpg">
-      <div class="product-content">
-        <h3>Caja 12 acuarelas escolares </h3>
-        <p>Pintura soluble en agua, uso escolar.</p>
-        <p class="price">$2,00</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://cdn.kimidori.es/big/default/HRIN000024/Paleta-para-mezclas-de-plastico-12-cm.jpg">
-      <div class="product-content">
-        <h3>Paleta de mezclas plástica </h3>
-        <p>Para combinar colores con facilidad.</p>
-        <p class="price">$1,25</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPXT6dh14SN1KV0shv0tIGDx11S0BazZbkpg&s">
-      <div class="product-content">
-        <h3>Espátula para pintura </h3>
-        <p>Herramienta para aplicar o mezclar.</p>
-        <p class="price">$0,95</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://tienda.pinturasprincipado.com/7542-large_default/Carioca-Plus-Bloc-Papel-Dibujo-A4-30Hojas-140gr.jpg">
-      <div class="product-content">
-        <h3>Bloc de dibujo A4 30 hojas</h3>
-        <p>Hojas resistentes para bocetos artísticos.</p>
-        <p class="price">$2,50</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_tmnP0UEq63Bb1SV3nTLKc0ru-vk8LlMv9A&s">
-      <div class="product-content">
-        <h3>Set de carboncillos</h3>
-        <p>Para sombreado en dibujo artístico.</p>
-        <p class="price">$3,50</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://galeria.gioto.com.co/uploads/presentation-77072624800303.png">
-      <div class="product-content">
-        <h3>Caja pasteles secos </h3>
-        <p>Textura suave, colores intensos.</p>
-        <p class="price">$4,20</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.mochilas-bolsos.com/wp-content/uploads/2024/03/AC52ECO009-2416Z-4QH_1.jpg">
-      <div class="product-content">
-        <h3>Estuche triple compartimento</h3>
-        <p>Organiza lápices y materiales escolares.</p>
-        <p class="price">$4,50</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.todohogar.com/124607/estuche-neopreno-para-laptop-con-cierre-y-bolsillo-155-catg-4493-estuche-neopreno-lapto.jpg">
-      <div class="product-content">
-        <h3>Estuche neopreno con cierre</h3>
-        <p>Suave, duradero, protege tus útiles.</p>
-        <p class="price">$2,80</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://drimjuguetes.vtexassets.com/arquivos/ids/872646/Spiderman-Mochila-Escolar-Basica.jpg?v=638542755243800000">
-      <div class="product-content">
-        <h3>Mochila escolar básica </h3>
-        <p>Liviana, espaciosa, para uso diario.</p>
-        <p class="price">$12,99</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-
-<div class="product">
-      <img src="https://www.abc.cl/dw/image/v2/BCPP_PRD/on/demandware.static/-/Sites-master-catalog/default/dwf053b750/images/large/27106307.jpg?sw=1200&sh=1200&sm=fit">
-      <div class="product-content">
-        <h3>Mochila con ruedas</h3>
-        <p>Cómoda, ideal para peso extra.</p>
-        <p class="price">$24,90</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-
-<div class="product">
-      <img src="https://images.deprati.com.ec/sys-master/images/h24/h0f/11317501001758/16652986-1_product_1200Wx1800H">
-      <div class="product-content">
-        <h3>Lonchera térmica</h3>
-        <p>Mantiene alimentos frescos y seguros.</p>
-        <p class="price">$5,99</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.cafemaqueta.com/wp-content/uploads/2022/08/image-15-scaled.jpg">
-      <div class="product-content">
-        <h3>Cartuchera enrollable de tela </h3>
-        <p>Compacta, enrollable, fácil de llevar.</p>
-        <p class="price">$3,50</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://vinifan.com/wp-content/uploads/2020/01/Grupo-1-5.png">
-      <div class="product-content">
-        <h3>Archivador palanca A4</h3>
-        <p>Guarda hojas sueltas y tareas.</p>
-        <p class="price">$3,20</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://s3.amazonaws.com/online.storage/LBRRRCL/Products/b374d900-c9b1-4b27-b164-118a8d2bc68f.jpg">
-      <div class="product-content">
-        <h3>Carpeta plástica con broche</h3>
-        <p>Protege documentos, cierre seguro.</p>
-        <p class="price">$1,50</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://libreriairbe.com/wp-content/uploads/2023/04/Folder-Acordeon-Portafolio-de-Expansion-con-Boton-13-Divisiones-Tamano-Oficio.jpg">
-      <div class="product-content">
-        <h3>Portafolio tipo acordeón</h3>
-        <p>Múltiples compartimientos para organización.</p>
-        <p class="price">$2,80</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://tradineur.com/118432-superlarge_default/tradineur--pack-de-5-separadores-de-plastico-a4-para-archivadores-carpetas-uso-escolar-oficinas-31-x-23-cm-colores-surtidos.jpg">
-      <div class="product-content">
-        <h3>Separadores plásticos A4 (pack 5)</h3>
-        <p>Divide materias o secciones fácilmente.</p>
-        <p class="price">$1,10</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://m.media-amazon.com/images/G/01/kindle/journeys/KfOlzRXC2FYgHw22FggoclviLCQDcRYFVKmzVcR24exFM3D/ZTdmZjI0OWIt._CB658782331_.jpg">
-      <div class="product-content">
-        <h3>Tablet Amazon Fire 7</h3>
-        <p>Básica, lectura y navegación educativa.</p>
-        <p class="price">$59,99</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://novicompu.vtexassets.com/arquivos/ids/167090/1CLEN1943.jpg?v=638168302055330000">
-      <div class="product-content">
-        <h3>Tablet Lenovo Tab M10</h3>
-        <p>Pantalla grande, rendimiento fluido.</p>
-        <p class="price">$139,00</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.artefacta.com/media/catalog/product/1/4/147305.1.png?optimize=medium&bg-color=255,255,255&fit=bounds&height=1040&width=1040&canvas=1040:1040&format=jpeg">
-      <div class="product-content">
-        <h3>Laptop HP 15.6”</h3>
-        <p>Ideal para tareas escolares virtuales.</p>
-        <p class="price">$299,99</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.steren.com.ec/media/catalog/product/cache/532829604b379f478db69368d14615cd/image/1692176e6/mouse-inalambrico-1000-1500-2000-dpi.jpg">
-      <div class="product-content">
-        <h3>Mouse inalámbrico</h3>
-        <p>Portátil, sin cables, fácil uso.</p>
-        <p class="price">$6,50</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://kywiec.vtexassets.com/arquivos/ids/189618/913908.jpg?v=638388728065170000">
-      <div class="product-content">
-        <h3>Teclado USB</h3>
-        <p>Conexión rápida, ideal para oficina.</p>
-        <p class="price">$9,00</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://granhogar.com.ec/imagenes/productos/6485:47:d0?v=0">
-      <div class="product-content">
-        <h3>Memoria USB 32 GB</h3>
-        <p>Almacena documentos y tareas escolares.</p>
-        <p class="price">$6,99</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://nomadaware.com.ec/wp-content/uploads/NomadaWare_1TB_ssd_externo_kingston_xs1000_usb_3-2.webp">
-      <div class="product-content">
-        <h3>Disco duro externo 1TB</h3>
-        <p>Guarda archivos, películas o trabajos.</p>
-        <p class="price">$47,00</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://images.deprati.com.ec/sys-master/images/hf0/h9f/9912876662814/16026860-0_product_1200Wx1800H">
-      <div class="product-content">
-        <h3>Audífonos con micrófono</h3>
-        <p>Para clases en línea o música.</p>
-        <p class="price">$5,50</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://resources.claroshop.com/medios-plazavip/t1/17249815676jpg">
-      <div class="product-content">
-        <h3>Bocina Bluetooth portátil</h3>
-        <p>Reproduce audio con buena calidad.</p>
-        <p class="price">$10,99</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://i5.walmartimages.com/seo/Universal-Multi-Plug-USB-Cable-Charger-USB-Adapter-Cable-Data-Wire-Cord-10-in-1-Multifunction-USB-Data-Cable-20cm_c84f44d3-6727-4727-b200-981f514624ac.35d04b9b3e98d71d495d8ed6c6e0e9d6.jpeg">
-      <div class="product-content">
-        <h3>Cable cargador universal</h3>
-        <p>Ideal para tareas escolares virtuales.</p>
-        <p class="price">$3,25</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://bsecommerceprod.blob.core.windows.net/magento/catalog/product/cache/4d7bf8575b873e81d084ecf5c6c633f2/9/7/9786072102897-a.jpg">
-      <div class="product-content">
-        <h3>Diccionario escolar Larousse</h3>
-        <p>Búsqueda rápida de significados comunes.</p>
-        <p class="price">$6,75</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk7Axy8GnvKjo2Xz8I80BemCgthB2oX5Vgxw&s">
-      <div class="product-content">
-        <h3>Enciclopedia escolar básica</h3>
-        <p>Contenido general para educación primaria.</p>
-        <p class="price">$19,99</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.lexuseditores.com.ec/wp-content/uploads/2022/07/MMPRP1.jpg">
-      <div class="product-content">
-        <h3>Libro “El Principito”</h3>
-        <p>Clásico literario, lectura corta reflexiva.</p>
-        <p class="price">$3,99</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxUWRDGCY3Lhv0GJylW-3UWNbV6d5Ywltaeg&s">
-      <div class="product-content">
-        <h3>Libro“Mi planta de naranja lima”</h3>
-        <p>Novela infantil conmovedora y educativa.</p>
-        <p class="price">$4,50</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://coolhuntermx.com/wp-content/uploads/2022/04/Coolhuntermx_LIBROSINFANTILES_PORTADA_2022-scaled.jpeg">
-      <div class="product-content">
-        <h3>Libro cuentos infantiles ilustrados</h3>
-        <p>Relatos cortos con imágenes coloridas.</p>
-        <p class="price">$6,99</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://cadabrabooks.com/cdn/shop/files/fea15c93-7093-4ba9-a21b-a20a07f04676_1200x1200.jpg?v=1731800347">
-      <div class="product-content">
-        <h3>Harry Potter y la piedra filosofal</h3>
-        <p>Fantasía juvenil, primer libro saga.</p>
-        <p class="price">$11,50</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://static.bookscovers.es/imagenesP/8435747/843574781539.JPG">
-      <div class="product-content">
-        <h3>Agenda escolar 2025-2026</h3>
-        <p>Organiza fechas, tareas y eventos.</p>
-        <p class="price">$3,20</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://m.media-amazon.com/images/I/7101zNnqzKL.jpg">
-      <div class="product-content">
-        <h3>Planificador semanal magnético</h3>
-        <p>Pegable, ideal para escritorios o nevera.</p>
-        <p class="price">$4,90</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://plantec.com.ar/wp-content/uploads/19951-Cuaderno-de-Caligrafia-N%C2%BA1-PLANTEC.jpg">
-      <div class="product-content">
-        <h3>Cuaderno de caligrafía</h3>
-        <p>Mejora la escritura con práctica.</p>
-        <p class="price">$1,10</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeVXdZ7M4Vo4uNQyPrlC0IRubj0-__Do5QGA&s">
-      <div class="product-content">
-        <h3>Manual de matemáticas grado medio</h3>
-        <p>Contenidos escolares para ejercicios básicos.</p>
-        <p class="price">$9,50</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmTUMlTIpxXHWawuUdkE99ZtWdzRrJWnFKTw&s">
-      <div class="product-content">
-        <h3>Gel antibacterial bolsillo</h3>
-        <p>Higiene rápida sin agua ni jabón.</p>
-        <p class="price">$1,20</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.supermaxi.com/wp-content/uploads/2024/08/items2Figm2F1500x15002F7861001851373-1.jpg.webp">
-      <div class="product-content">
-        <h3>Toallitas húmedas pack escolar</h3>
-        <p>Limpieza facial o de manos rápida.</p>
-        <p class="price">$1,00</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-<div class="product">
-      <img src="https://www.tecnotrade.com.ec/wp-content/uploads/2021/04/2-1.jpg">
-      <div class="product-content">
-        <h3>Mascarilla reutilizable niño</h3>
-        <p>Tela lavable, diseño escolar divertido.</p>
-        <p class="price">$1,80</p>
-      </div>
-      <button>Agregar al carrito</button>
-    </div>
-
-  </main>
-
-  <footer>
-    &copy; 2025 Tienda Online Gonzalez -  3ero N Bachillerato Tecnico
-  </footer>
-
-
-<script>
-  const toggleBtn = document.getElementById('toggle-filter-btn');
-  const categoryMenu = document.getElementById('category-menu');
-
-  // Mostrar/ocultar menú
-  toggleBtn.onclick = function () {
-    if (categoryMenu.classList.contains('visible')) {
-      categoryMenu.classList.remove('visible');
-    } else {
-      categoryMenu.classList.add('visible');
-    }
-  };
-
-  // Selección de categoría
-  function selectCategory(element, category) {
-    // Visual activo
-    document.querySelectorAll('.category-menu li').forEach(li => li.classList.remove('active'));
-    element.classList.add('active');
-
-    // Filtrado
-    document.querySelectorAll('.product').forEach(product => {
-      const cat = product.getAttribute('data-category');
-      product.style.display = (category === 'all' || category === cat) ? 'flex' : 'none';
-    });
-
-   
-</script>
-
+  </script>
 </body>
 </html>
+
+
 
 
 
