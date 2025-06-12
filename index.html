@@ -4,7 +4,7 @@
 <BODY BGCOLOR="BLACK">
 <IMG SRC="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBxDx2XtWS1kMPkiqss24vLlWNDPrcgIrpq_2Y1oT5GzXOtcvRNtVcKO5ZxYMi5EgQ6G8Fjww36KfvCKIeIsCDxegPR1yF6ePRsy-LZAi0dZaDANyPPwv50TWLPJdd5W7x-m2m0-bXWdqq/s1600/NID.png" ALIGN="LEFT" HEIGH="130" WIDTH="130">
 
-<IMG SRC="nid.gif" ALIGN="RIGHT" HEIGH="400" WIDTH="200">
+<IMG SRC="https://www.gifcen.com/wp-content/uploads/2023/11/hacker-gif-5.gif" ALIGN="RIGHT" HEIGH="400" WIDTH="200">
 
 <BR><BR><BR><BR><BR><br>
 <FONT COLOR="#41bc4f">
@@ -25,82 +25,82 @@ Gonzalez Espinoza
 <CENTER>
 <FONT FACE="IMPACT" SIZE=30>
 <Titlee><BGCOLOR="BLACK">
-<FONT COLOR="PERU">
+<FONT COLOR="PERU"class="neon">
 <MARQUEE>
 P
 </MARQUEE>
 </FONT>
 <BR>
-<FONT COLOR="RED">
+<FONT COLOR="RED"class="neon">
 R
 </FONT>
-<FONT COLOR="BLUE">
+<FONT COLOR="BLUE"class="neon">
 O
 </FONT>
-<FONT COLOR="WHITE">
+<FONT COLOR="WHITE"class="neon">
 Y
 </FONT>
-<FONT COLOR="YELLOW">
+<FONT COLOR="YELLOW"class="neon">
 E
 </FONT>
-<FONT COLOR="GREEN">
+<FONT COLOR="GREEN"class="neon">
 C
 </FONT>
-<FONT COLOR="ORANGE">
+<FONT COLOR="ORANGE"class="neon">
 T
 </FONT>
-<FONT COLOR="PURPLE">
+<FONT COLOR="PURPLE"class="neon">
 O
 </FONT>
 _
-<FONT COLOR="AQUA">
+<FONT COLOR="AQUA"class="neon">
 D
 </FONT>
-<FONT COLOR="WHITE">
+<FONT COLOR="WHITE"class="neon">
 E
 </FONT>
 _
-<FONT COLOR="BLUE">
+<FONT COLOR="BLUE"class="neon">
 Á
 </FONT>
-<FONT COLOR="LIME">
+<FONT COLOR="LIME"class="neon">
 R
 </FONT>
-<FONT COLOR="SALMON">
+<FONT COLOR="SALMON"class="neon">
 E
 </FONT>
-<FONT COLOR="BLUE">
+<FONT COLOR="BLUE"class="neon">
 A
 </FONT>
 _
-<FONT COLOR="TEAL">
+<FONT COLOR="TEAL"class="neon">
 T
 </FONT>
-<FONT COLOR="GREEN">
+<FONT COLOR="GREEN"class="neon">
 É
 </FONT>
-<FONT COLOR="AQUA">
+<FONT COLOR="AQUA"class="neon">
 C
 </FONT>
-<FONT COLOR="ORANGE">
+<FONT COLOR="ORANGE"class="neon">
 N
 </FONT>
-<FONT COLOR="RED">
+<FONT COLOR="RED"class="neon">
 I
 </FONT>
-<FONT COLOR="BLUE">
+<FONT COLOR="BLUE"class="neon">
 C
 </FONT>
-<FONT COLOR="LIME">
+<FONT COLOR="LIME"class="neon">
 A
 </FONT>
 _
-<FONT COLOR="#41bc4f">
+<FONT COLOR="#41bc4f"class="neon">
 2025-202
 </FONT>
 <BR>
 <MARQUEE>
-<FONT COLOR="YELLOW">
+<FONT COLOR="YELLOW"class="neon">
 6
 </FONT>
 </MARQUEE>
@@ -113,6 +113,31 @@ _
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
 
+
+.neon {
+  text-shadow:
+    0 0 3px currentColor,
+    0 0 5px currentColor,
+    0 0 8px currentColor;
+  font-weight: bold;
+  animation: parpadeo 2s infinite alternate;
+}
+
+/* Animación sutil tipo parpadeo */
+@keyframes parpadeo {
+  0% {
+    text-shadow:
+      0 0 3px currentColor,
+      0 0 5px currentColor,
+      0 0 8px currentColor;
+  }
+  100% {
+    text-shadow:
+      0 0 1px currentColor,
+      0 0 2px currentColor,
+      0 0 4px currentColor;
+  }
+}
       #muteBtn {
   position: fixed;
   bottom: 10px;         /* Lo coloca cerca del borde inferior */
@@ -132,8 +157,7 @@ _
       height: 300px;
             text-align: center;
             position: relative;
-            overflow: hidden; /* Evita que el contenido se desborde por el video de fondo */
-        }
+            overflow: hidden;        }
 
         ul {
             list-style-type: none;
@@ -162,21 +186,49 @@ _
             width: 100%;
         }
 
-        a {
-            display: block;
-            padding: 20px;
-            text-decoration: none;
-            color: #00FF00; /* Letras verdes brillantes */
-            background: #000000; /* Fondo negro */
-            border: 2px solid #00FF00; /* Borde verde brillante */
-            border-radius: 5px; /* Bordes redondeados */
-        }
+   a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #000; /* Texto negro para contraste */
+    font-weight: bold;
+    border: 2px solid #00FF00;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.2s;
+    box-shadow: 0 0 12px #00FF00;
+}
 
-        a:hover {
-            background: #333333; /* Fondo ligeramente gris al pasar el ratón */
-        }
+/* Efecto al pasar el mouse */
+a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ffffff;
+}
 
-        /* Estilo para el video de fondo */
+/* Colores por botón principal del menú */
+ul > li:nth-child(1) > a {
+    background-color: #00FF00; /* Verde neón */
+}
+
+ul > li:nth-child(2) > a {
+    background-color: #00BFFF; /* Azul brillante (Deep Sky Blue) */
+}
+
+ul > li:nth-child(3) > a {
+    background-color: #8A2BE2; /* Morado vibrante (BlueViolet) */
+}
+
+ul > li:nth-child(4) > a {
+    background-color: #000080; /* Navy (azul oscuro elegante) */
+    color: #FFFFFF; /* Texto blanco porque Navy es muy oscuro */
+}
+
+ul > li:nth-child(5) > a {
+    background-color: #FFD700; /* Dorado (Gold) */
+}
+
+
+
+   
         video {
             position: absolute;
             top: 0;
@@ -187,7 +239,7 @@ _
             z-index: -1; /* Coloca el video detrás de los demás elementos */
         }
 
-        /* Estilo para el audio de fondo */
+
         audio {
             display: none; /* Oculta el reproductor de audio */
         }
@@ -196,13 +248,13 @@ _
 </head>
 <body>
 
-    <!-- Video de fondo -->
+
     <video autoplay loop muted>
-        <source src="matrix.mp4" type="video/mp4">
+        <source src="fondo.mp4" type="video/mp4">
         Tu navegador no soporta el elemento de video.
     </video>
 
-    <!-- Música de fondo -->
+
  <button id="muteBtn">🔇</button>
      <audio id="musica" autoplay loop>
         <source src="jump.mp3" type="audio/mp3">
@@ -214,33 +266,41 @@ _
     <li>
         <a href="proyecto/programacion.html" target="_blank">Programación y Base de Datos</a>
         <ul>
-            <li><a href="proyecto/programacion.html#trimestre1" target="_blank">Trimestre 1</a></li>
-            <li><a href="proyecto/programacion.html#trimestre2" target="_blank">Trimestre 2</a></li>
-            <li><a href="proyecto/programacion.html#trimestre3" target="_blank">Trimestre 3</a></li>
+            <li><a href="proyecto/programacion.html" target="_blank">Trimestre 1</a></li>
+            <li><a href="#" target="_blank">Trimestre 2</a></li>
+            <li><a href="#" target="_blank">Trimestre 3</a></li>
         </ul>
     </li>
     <li>
-        <a href="proyecto/diseño.html" target="_blank">Diseño y Desarrollo Web</a>
+        <a href="#" target="_blank">Diseño y Desarrollo Web</a>
         <ul>
-            <li><a href="proyecto/diseño.html#trimestre1" target="_blank">Trimestre 1</a></li>
-            <li><a href="proyecto/diseño.html#trimestre2" target="_blank">Trimestre 2</a></li>
-            <li><a href="proyecto/diseño.html#trimestre3" target="_blank">Trimestre 3</a></li>
+            <li><a href="proyecto/diseño.html" target="_blank">Trimestre 1</a></li>
+            <li><a href="#" target="_blank">Trimestre 2</a></li>
+            <li><a href="#" target="_blank">Trimestre 3</a></li>
         </ul>
     </li>
     <li>
-        <a href="proyecto/sistemas.html" target="_blank">Sistemas Operativos y Redes</a>
+        <a href="#" target="_blank">Sistemas Operativos y Redes</a>
         <ul>
-            <li><a href="proyecto/sistemas.html#trimestre1" target="_blank">Trimestre 1</a></li>
-            <li><a href="proyecto/sistemas.html#trimestre2" target="_blank">Trimestre 2</a></li>
-            <li><a href="proyecto/sistemas.html#trimestre3" target="_blank">Trimestre 3</a></li>
+            <li><a href="proyecto/sistemas.html" target="_blank">Trimestre 1</a></li>
+            <li><a href="#" target="_blank">Trimestre 2</a></li>
+            <li><a href="#" target="_blank">Trimestre 3</a></li>
+        </ul>
+    </li>
+   <li>
+        <a href=" " target="_blank">Aplicaciones Ofimáticas</a>
+        <ul>
+            <li><a href="#" target="_blank">Trimestre 1</a></li>
+            <li><a href="#" target="_blank">Trimestre 2</a></li>
+            <li><a href="#" target="_blank">Trimestre 3</a></li>
         </ul>
     </li>
     <li>
-        <a href="proyecto/soporte.html" target="_blank">Soporte Técnico</a>
+        <a href="#" target="_blank">Soporte Técnico</a>
         <ul>
-            <li><a href="proyecto/soporte.html#trimestre1" target="_blank">Trimestre 1</a></li>
-            <li><a href="proyecto/soporte.html#trimestre2" target="_blank">Trimestre 2</a></li>
-            <li><a href="proyecto/soporte.html#trimestre3" target="_blank">Trimestre 3</a></li>
+            <li><a href="proyecto/soporte.html" target="_blank">Trimestre 1</a></li>
+            <li><a href="#" target="_blank">Trimestre 2</a></li>
+            <li><a href="#" target="_blank">Trimestre 3</a></li>
         </ul>
     </li>
 </ul>
@@ -250,8 +310,7 @@ _
 
 <IMG SRC="https://media.tenor.com/D_wJdL-SnpgAAAAM/phonk-russian-badger.gif" WIDTH=400 HEIGHT=170 ALIGN="LEFT">
 
-
-
+<IMG SRC="https://media.licdn.com/dms/image/v2/D4D22AQEG2VYrTbBCZg/feedshare-shrink_800/feedshare-shrink_800/0/1713670035318?e=2147483647&v=beta&t=-BaDR5LJRPOE4A8n61NOoHyrfg032QazmguasAIl0Z4" WIDTH=340 HEIGHT=210 ALIGN="CENTER">
    <script>
     let musicaIniciada = false;
     const audio = document.getElementById('musica');
@@ -272,13 +331,9 @@ _
     muteBtn.addEventListener('click', (e) => {
       e.stopPropagation(); // Evita que se vuelva a intentar reproducir
       audio.muted = !audio.muted;
-      muteBtn.textContent = audio.muted ? '🔊' : '🔇';
+      muteBtn.textContent = audio.muted ? '🔇' : '🔊';
     });
   </script>
 </body>
 </html>
-
-
-
-
 
