@@ -1,317 +1,302 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<BODY BGCOLOR="BLACK">
-<IMG SRC="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBxDx2XtWS1kMPkiqss24vLlWNDPrcgIrpq_2Y1oT5GzXOtcvRNtVcKO5ZxYMi5EgQ6G8Fjww36KfvCKIeIsCDxegPR1yF6ePRsy-LZAi0dZaDANyPPwv50TWLPJdd5W7x-m2m0-bXWdqq/s1600/NID.png" ALIGN="LEFT" HEIGH="130" WIDTH="130">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página de html</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-<IMG SRC="https://www.gifcen.com/wp-content/uploads/2023/11/hacker-gif-5.gif" ALIGN="RIGHT" HEIGH="400" WIDTH="200">
+    body {
+      background-color: black;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #41bc4f;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
 
-<BR><BR><BR><BR><BR><br>
-<FONT COLOR="#41bc4f">
-<B>
-<P ALIGN="RIGHT">
-Curso: 2do N
-</B> 
-</FONT>
+    .encabezado {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
 
-<FONT COLOR="#41bc4f">
-<B>
-<P ALIGN="LEFT">
-Nombre: Erick Jostyn <br>
-Gonzalez Espinoza
-</B>
-</FONT>
+    .encabezado img {
+      height: 100px;
+      width: auto;
+    }
 
-<CENTER>
-<FONT FACE="IMPACT" SIZE=30>
-<Titlee><BGCOLOR="BLACK">
-<FONT COLOR="PERU"class="neon">
-<MARQUEE>
-P
-</MARQUEE>
-</FONT>
-<BR>
-<FONT COLOR="RED"class="neon">
-R
-</FONT>
-<FONT COLOR="BLUE"class="neon">
-O
-</FONT>
-<FONT COLOR="WHITE"class="neon">
-Y
-</FONT>
-<FONT COLOR="YELLOW"class="neon">
-E
-</FONT>
-<FONT COLOR="GREEN"class="neon">
-C
-</FONT>
-<FONT COLOR="ORANGE"class="neon">
-T
-</FONT>
-<FONT COLOR="PURPLE"class="neon">
-O
-</FONT>
-_
-<FONT COLOR="AQUA"class="neon">
-D
-</FONT>
-<FONT COLOR="WHITE"class="neon">
-E
-</FONT>
-_
-<FONT COLOR="BLUE"class="neon">
-Á
-</FONT>
-<FONT COLOR="LIME"class="neon">
-R
-</FONT>
-<FONT COLOR="SALMON"class="neon">
-E
-</FONT>
-<FONT COLOR="BLUE"class="neon">
-A
-</FONT>
-_
-<FONT COLOR="TEAL"class="neon">
-T
-</FONT>
-<FONT COLOR="GREEN"class="neon">
-É
-</FONT>
-<FONT COLOR="AQUA"class="neon">
-C
-</FONT>
-<FONT COLOR="ORANGE"class="neon">
-N
-</FONT>
-<FONT COLOR="RED"class="neon">
-I
-</FONT>
-<FONT COLOR="BLUE"class="neon">
-C
-</FONT>
-<FONT COLOR="LIME"class="neon">
-A
-</FONT>
-_
-<FONT COLOR="#41bc4f"class="neon">
-2025-202
-</FONT>
-<BR>
-<MARQUEE>
-<FONT COLOR="YELLOW"class="neon">
-6
-</FONT>
-</MARQUEE>
-</Titlee>
+    .info-personal {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      flex-wrap: wrap;
+    }
 
-</FONT>
-<hr size="8px" color="green">
+    .info-personal p {
+      font-weight: bold;
+      margin: 5px 0;
+    }
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
+    h1.titulo-principal {
+      color: #25b839;
+      font-family: Impact, sans-serif;
+      font-weight: bold;
+      font-size: 3rem;
+      margin: 30px 0 20px 0;
+      text-align: center;
+    }
 
+    .neon {
+      text-shadow: 0 0 3px currentColor, 0 0 5px currentColor, 0 0 8px currentColor;
+      font-weight: bold;
+      animation: parpadeo 2s infinite alternate;
+    }
 
-.neon {
-  text-shadow:
-    0 0 3px currentColor,
-    0 0 5px currentColor,
-    0 0 8px currentColor;
-  font-weight: bold;
-  animation: parpadeo 2s infinite alternate;
-}
+    .recuadro-verde {
+      border: 3px solid #00FF00;
+      padding: 15px;
+      display: inline-block;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #00FF00;
+      background-color: rgba(0, 255, 0, 0.05);
+    }
 
-/* Animación sutil tipo parpadeo */
-@keyframes parpadeo {
-  0% {
-    text-shadow:
-      0 0 3px currentColor,
-      0 0 5px currentColor,
-      0 0 8px currentColor;
-  }
-  100% {
-    text-shadow:
-      0 0 1px currentColor,
-      0 0 2px currentColor,
-      0 0 4px currentColor;
-  }
-}
-      #muteBtn {
-  position: fixed;
-  bottom: 10px;         /* Lo coloca cerca del borde inferior */
-  right: 10px;           /* Lo coloca cerca del borde izquierdo */
-  padding: 10px 20px;
-  font-size: 16px;
-  z-index: 1000;
-  background-color: black;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  cursor: pointer;
-}
-        
-        body {
+    @keyframes parpadeo {
+      0% {
+        text-shadow: 0 0 3px currentColor, 0 0 5px currentColor, 0 0 8px currentColor;
+      }
+      100% {
+        text-shadow: 0 0 1px currentColor, 0 0 2px currentColor, 0 0 4px currentColor;
+      }
+    }
 
-             body {
-      height: 300px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;        }
+    .menu-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
 
-        ul {
-            list-style-type: none;
-            margin: 70;
-            padding: 0;
-            display: inline-block;
-        }
+    ul.menu-principal {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
 
-        li {
-            display: inline-block;
-            position: relative;
-        }
+    ul.menu-principal > li {
+      position: relative;
+    }
 
-        li:hover ul {
-            display: block;
-        }
+    ul.menu-principal > li:hover > ul.submenu {
+      display: block;
+    }
 
-        ul ul {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-        }
+    ul.submenu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: black;
+      padding: 5px 0;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #41bc4f;
+      min-width: 140px;
+      z-index: 10;
+    }
 
-        ul ul li {
-            width: 100%;
-        }
-
-   a {
-    display: block;
+    ul.submenu li {
+      width: 100%;
+    }
+.imagenes-abajo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 40px;
     padding: 20px;
-    text-decoration: none;
-    color: #000; /* Texto negro para contraste */
-    font-weight: bold;
-    border: 2px solid #00FF00;
-    border-radius: 5px;
-    transition: background 0.3s ease, transform 0.2s;
-    box-shadow: 0 0 12px #00FF00;
+    width: 100%;
 }
 
-/* Efecto al pasar el mouse */
-a:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #ffffff;
+.imagen-izquierda {
+    width: 300px;  /* más ancha */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #41bc4f;
 }
 
-/* Colores por botón principal del menú */
-ul > li:nth-child(1) > a {
-    background-color: #00FF00; /* Verde neón */
-}
-
-ul > li:nth-child(2) > a {
-    background-color: #00BFFF; /* Azul brillante (Deep Sky Blue) */
-}
-
-ul > li:nth-child(3) > a {
-    background-color: #8A2BE2; /* Morado vibrante (BlueViolet) */
-}
-
-ul > li:nth-child(4) > a {
-    background-color: #000080; /* Navy (azul oscuro elegante) */
-    color: #FFFFFF; /* Texto blanco porque Navy es muy oscuro */
-}
-
-ul > li:nth-child(5) > a {
-    background-color: #FFD700; /* Dorado (Gold) */
+.imagen-derecha {
+    width: 400px;  /* más pequeña */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #41bc4f;
 }
 
 
 
-   
-        video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Asegura que el video cubra toda la pantalla */
-            z-index: -1; /* Coloca el video detrás de los demás elementos */
-        }
 
+    a {
+      display: block;
+      padding: 20px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      border: 2px solid #00FF00;
+      border-radius: 5px;
+      transition: background 0.3s ease, transform 0.2s;
+      box-shadow: 0 0 12px #00FF00;
+      background-color: #00FF00;
+      white-space: nowrap;
+    }
 
-        audio {
-            display: none; /* Oculta el reproductor de audio */
-        }
-    </style>
-    <title>Pagina de html</title>
+    ul.menu-principal > li:nth-child(1) > a { background-color: #00FF00; }
+    ul.menu-principal > li:nth-child(2) > a { background-color: #00BFFF; }
+    ul.menu-principal > li:nth-child(3) > a { background-color: #8A2BE2; }
+    ul.menu-principal > li:nth-child(4) > a { background-color: #000080; color: #FFFFFF; }
+    ul.menu-principal > li:nth-child(5) > a { background-color: #FFD700; color: #000; }
+    ul.menu-principal > li:nth-child(6) > a { background-color: #FF4500; color: #fff; }
+
+    a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #ffffff;
+    }
+.centrado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    audio {
+      display: none;
+    }
+
+    #muteBtn {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      z-index: 1000;
+      background-color: black;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #41bc4f;
+      display: none;
+    }
+
+  </style>
 </head>
 <body>
 
+  <video autoplay loop muted>
+    <source src="fondo.mp4" type="video/mp4" />
+    Tu navegador no soporta el elemento de video.
+  </video>
 
-    <video autoplay loop muted>
-        <source src="fondo.mp4" type="video/mp4">
-        Tu navegador no soporta el elemento de video.
-    </video>
+  <div class="encabezado">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBxDx2XtWS1kMPkiqss24vLlWNDPrcgIrpq_2Y1oT5GzXOtcvRNtVcKO5ZxYMi5EgQ6G8Fjww36KfvCKIeIsCDxegPR1yF6ePRsy-LZAi0dZaDANyPPwv50TWLPJdd5W7x-m2m0-bXWdqq/s1600/NID.png" alt="Logo" />
+    <img src="https://www.gifcen.com/wp-content/uploads/2023/11/hacker-gif-5.gif" alt="Hacker GIF" />
+  </div>
+
+  <div class="info-personal">
+    <p>Nombre: Erick Jostyn <br />Gonzalez Espinoza</p>
+    <p>Curso: 2do N</p>
+  </div>
+
+  <div class="centrado">
+  <h1 class="titulo-principal neon recuadro-verde">PROYECTO DE ÁREA TÉCNICA 2025-2026</h1>
+</div>
 
 
- <button id="muteBtn">🔇</button>
-     <audio id="musica" autoplay loop>
-        <source src="jump.mp3" type="audio/mp3">
-        Tu navegador no soporta el elemento de audio.
-    </audio>
+  <hr size="8" color="green" />
 
-    <div>
-      <ul>
-    <li>
-        <a href="proyecto/programacion.html" target="_blank">Programación y Base de Datos</a>
-        <ul>
-            <li><a href="proyecto/programacion.html" target="_blank">Trimestre 1</a></li>
-            <li><a href="#" target="_blank">Trimestre 2</a></li>
-            <li><a href="#" target="_blank">Trimestre 3</a></li>
+  <div class="menu-container">
+    <ul class="menu-principal">
+      <li>
+        <a href="javascript:void(0)">Programación y Base de Datos</a>
+        <ul class="submenu">
+          <li><a href="proyecto/Programacion.html" target="_blank">Trimestre 1</a></li>
+          <li><a href="javascript:void(0)">Trimestre 2</a></li>
+          <li><a href="javascript:void(0)">Trimestre 3</a></li>
         </ul>
-    </li>
-    <li>
-        <a href="#" target="_blank">Diseño y Desarrollo Web</a>
-        <ul>
-            <li><a href="proyecto/diseño.html" target="_blank">Trimestre 1</a></li>
-            <li><a href="#" target="_blank">Trimestre 2</a></li>
-            <li><a href="#" target="_blank">Trimestre 3</a></li>
+      </li>
+      <li>
+        <a href="javascript:void(0)">Diseño y Desarrollo Web</a>
+        <ul class="submenu">
+          <li><a href="proyecto/diseño.html" target="_blank">Trimestre 1</a></li>
+          <li><a href="javascript:void(0)">Trimestre 2</a></li>
+          <li><a href="javascript:void(0)">Trimestre 3</a></li>
         </ul>
-    </li>
-    <li>
-        <a href="#" target="_blank">Sistemas Operativos y Redes</a>
-        <ul>
-            <li><a href="proyecto/sistemas.html" target="_blank">Trimestre 1</a></li>
-            <li><a href="#" target="_blank">Trimestre 2</a></li>
-            <li><a href="#" target="_blank">Trimestre 3</a></li>
+      </li>
+      <li>
+        <a href="javascript:void(0)">Sistemas Operativos y Redes</a>
+        <ul class="submenu">
+          <li><a href="proyecto/sistemas.html" target="_blank">Trimestre 1</a></li>
+          <li><a href="javascript:void(0)">Trimestre 2</a></li>
+          <li><a href="javascript:void(0)">Trimestre 3</a></li>
         </ul>
-    </li>
-   <li>
-        <a href=" " target="_blank">Aplicaciones Ofimáticas</a>
-        <ul>
-            <li><a href="#" target="_blank">Trimestre 1</a></li>
-            <li><a href="#" target="_blank">Trimestre 2</a></li>
-            <li><a href="#" target="_blank">Trimestre 3</a></li>
+      </li>
+      <li>
+        <a href="javascript:void(0)">Aplicaciones Ofimáticas</a>
+        <ul class="submenu">
+          <li><a href=" " target="_blank">Trimestre 1</a></li>
+          <li><a href="javascript:void(0)">Trimestre 2</a></li>
+          <li><a href="javascript:void(0)">Trimestre 3</a></li>
         </ul>
-    </li>
-    <li>
-        <a href="#" target="_blank">Soporte Técnico</a>
-        <ul>
-            <li><a href="proyecto/soporte.html" target="_blank">Trimestre 1</a></li>
-            <li><a href="#" target="_blank">Trimestre 2</a></li>
-            <li><a href="#" target="_blank">Trimestre 3</a></li>
+      </li>
+      <li>
+        <a href="javascript:void(0)">Soporte Técnico</a>
+        <ul class="submenu">
+          <li><a href="proyecto/soporte.html" target="_blank">Trimestre 1</a></li>
+          <li><a href="javascript:void(0)">Trimestre 2</a></li>
+          <li><a href="javascript:void(0)">Trimestre 3</a></li>
         </ul>
-    </li>
-</ul>
-    </div>
+      </li>
+      <li>
+        <a href="javascript:void(0)">FOL</a>
+        <ul class="submenu">
+          <li><a href="proyecto/FOL.html" target="_blank">Trimestre 1</a></li>
+          <li><a href="javascript:void(0)">Trimestre 2</a></li>
+          <li><a href="javascript:void(0)">Trimestre 3</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 
-<HR color=green>
+  <hr color="green" />
 
-<IMG SRC="https://media.tenor.com/D_wJdL-SnpgAAAAM/phonk-russian-badger.gif" WIDTH=400 HEIGHT=170 ALIGN="LEFT">
+<div class="imagenes-abajo">
+  <img src="https://media.tenor.com/D_wJdL-SnpgAAAAM/phonk-russian-badger.gif" alt="GIF Izquierda" class="imagen-izquierda" />
+  <img src="https://media.licdn.com/dms/image/v2/D4D22AQEG2VYrTbBCZg/feedshare-shrink_800/feedshare-shrink_800/0/1713670035318?e=2147483647&v=beta&t=-BaDR5LJRPOE4A8n61NOoHyrfg032QazmguasAIl0Z4" alt="Imagen Derecha" class="imagen-derecha" />
+</div>
 
-<IMG SRC="https://media.licdn.com/dms/image/v2/D4D22AQEG2VYrTbBCZg/feedshare-shrink_800/feedshare-shrink_800/0/1713670035318?e=2147483647&v=beta&t=-BaDR5LJRPOE4A8n61NOoHyrfg032QazmguasAIl0Z4" WIDTH=340 HEIGHT=210 ALIGN="CENTER">
-   <script>
+
+  <button id="muteBtn">🔇</button>
+  <audio id="musica" autoplay loop>
+    <source src="jump.mp3" type="audio/mp3" />
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <script>
     let musicaIniciada = false;
     const audio = document.getElementById('musica');
     const muteBtn = document.getElementById('muteBtn');
@@ -321,7 +306,6 @@ ul > li:nth-child(5) > a {
         audio.play().then(() => {
           musicaIniciada = true;
           muteBtn.style.display = 'inline-block';
-          console.log("🎵 Música iniciada");
         }).catch(error => {
           console.error("❌ No se pudo reproducir el audio:", error);
         });
@@ -329,11 +313,11 @@ ul > li:nth-child(5) > a {
     });
 
     muteBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // Evita que se vuelva a intentar reproducir
+      e.stopPropagation();
       audio.muted = !audio.muted;
       muteBtn.textContent = audio.muted ? '🔇' : '🔊';
     });
   </script>
+
 </body>
 </html>
-
