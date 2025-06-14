@@ -42,37 +42,31 @@
       margin: 5px 0;
     }
 
+    /* 🔁 Animación parpadeo */
+    @keyframes parpadeoSuave {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
     h1.titulo-principal {
-      color: #25b839;
-      font-family: Impact, sans-serif;
-      font-weight: bold;
+      color: #00FF00;
+      font-family: 'Impact', sans-serif;
       font-size: 3rem;
-      margin: 30px 0 20px 0;
-      text-align: center;
-    }
-
-    .neon {
-      text-shadow: 0 0 3px currentColor, 0 0 5px currentColor, 0 0 8px currentColor;
       font-weight: bold;
-      animation: parpadeo 2s infinite alternate;
+      text-align: center;
+      margin: 30px 0 20px 0;
+      animation: parpadeoSuave 2s infinite ease-in-out;
     }
 
-    .recuadro-verde {
+   .recuadro-verde {
       border: 3px solid #00FF00;
       padding: 15px;
       display: inline-block;
       border-radius: 10px;
       box-shadow: 0 0 15px #00FF00;
+      background-image: url('https://png.pngtree.com/background/20210711/original/pngtree-simple-technology-business-black-electronic-banner-picture-image_1078086.jpg');
+      background-size: cover;
       background-color: rgba(0, 255, 0, 0.05);
-    }
-
-    @keyframes parpadeo {
-      0% {
-        text-shadow: 0 0 3px currentColor, 0 0 5px currentColor, 0 0 8px currentColor;
-      }
-      100% {
-        text-shadow: 0 0 1px currentColor, 0 0 2px currentColor, 0 0 4px currentColor;
-      }
     }
 
     .menu-container {
@@ -116,31 +110,6 @@
     ul.submenu li {
       width: 100%;
     }
-.imagenes-abajo {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: 40px;
-    padding: 20px;
-    width: 100%;
-}
-
-.imagen-izquierda {
-    width: 300px;  /* más ancha */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #41bc4f;
-}
-
-.imagen-derecha {
-    width: 400px;  /* más pequeña */
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #41bc4f;
-}
-
-
-
 
     a {
       display: block;
@@ -151,7 +120,6 @@
       border: 2px solid #00FF00;
       border-radius: 5px;
       transition: background 0.3s ease, transform 0.2s;
-      box-shadow: 0 0 12px #00FF00;
       background-color: #00FF00;
       white-space: nowrap;
     }
@@ -167,12 +135,36 @@
       transform: scale(1.05);
       box-shadow: 0 0 20px #ffffff;
     }
-.centrado {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
+
+    .centrado {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .imagenes-abajo {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 40px;
+      padding: 20px;
+      width: 100%;
+    }
+
+    .imagen-izquierda {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #41bc4f;
+    }
+
+    .imagen-derecha {
+      width: 400px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #41bc4f;
+    }
 
     video {
       position: fixed;
@@ -202,7 +194,6 @@
       color: #41bc4f;
       display: none;
     }
-
   </style>
 </head>
 <body>
@@ -223,11 +214,10 @@
   </div>
 
   <div class="centrado">
-  <h1 class="titulo-principal neon recuadro-verde">PROYECTO DE ÁREA TÉCNICA 2025-2026</h1>
-</div>
+    <h1 class="titulo-principal recuadro-verde">PROYECTO DE ÁREA TÉCNICA 2025–2026</h1>
+  </div>
 
-
-  <hr size="8" color="green" />
+   <hr size="8" color="green" />
 
   <div class="menu-container">
     <ul class="menu-principal">
