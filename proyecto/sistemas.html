@@ -7,6 +7,33 @@
         body { font-family: Arial, sans-serif; margin: 20px; background-color: #000; color: #0f0; }
         h1, h2, h3 { color: #0f0; }
         img { margin: 10px; width: 300px; }
+
+         button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #0f0;
+      background: transparent;
+      border: 2px solid #0f0;
+      border-radius: 8px;
+      box-shadow:
+        0 0 5px #0f0,
+        0 0 10px #0f0,
+        0 0 20px #0f0;
+      transition: box-shadow 0.3s ease, color 0.3s ease;
+      z-index: 1000;
+    }
+    button:hover {
+      color: #b3ffb3;
+      box-shadow:
+        0 0 10px #0f0,
+        0 0 20px #0f0,
+        0 0 40px #0f0,
+        0 0 60px #0f0;
+    }
     </style>
 </head>
 <body>
@@ -26,7 +53,15 @@
         <li><strong>CHKDSK:</strong> Verifica el estado del disco.</li>
         <li><strong>XCOPY:</strong> Copia archivos y directorios, incluyendo subdirectorios.</li>
     </ul>
-    <img src="https://1000marcas.net/wp-content/uploads/2021/06/MS-DOS-logo.png" alt="Logo MS-DOS">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Logo_windows_simples.svg/2280px-Logo_windows_simples.svg.png" alt="Logo de Windows">
+
+
+    <iframe width="560" height="315" 
+      src="https://www.youtube.com/embed/26qF7RXHI1w" 
+      title="Video armado PC" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen></iframe>
+    
+
+      <button onclick="window.location.href='/web/index.html'">Regresar</button>
 </body>
 </html>
