@@ -8,6 +8,33 @@
         h1, h2 { color: #0f0; }
         img { margin: 10px; width: 300px; }
         ul { line-height: 1.6; }
+
+          button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #0f0;
+      background: transparent;
+      border: 2px solid #0f0;
+      border-radius: 8px;
+      box-shadow:
+        0 0 5px #0f0,
+        0 0 10px #0f0,
+        0 0 20px #0f0;
+      transition: box-shadow 0.3s ease, color 0.3s ease;
+      z-index: 1000;
+    }
+    button:hover {
+      color: #b3ffb3;
+      box-shadow:
+        0 0 10px #0f0,
+        0 0 20px #0f0,
+        0 0 40px #0f0,
+        0 0 60px #0f0;
+    }
     </style>
 </head>
 <body>
@@ -23,7 +50,15 @@
         <li>Orientación para la búsqueda de empleo</li>
         <li>El mercado laboral y su funcionamiento</li>
     </ul>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Trabajo_icon.svg/1024px-Trabajo_icon.svg.png" alt="Icono de trabajo y formación laboral">
-    <img src="https://www.prevencionde Riesgos-laborales.com/wp-content/uploads/2017/10/prevencion-riesgos-laborales.jpg" alt="Prevención de riesgos laborales">
+
+    <iframe width="560" height="315" 
+      src="https://www.youtube.com/embed/OVOHnehJBSA" 
+      title="Video armado PC" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen></iframe>
+    
+    <img src="https://andaluciaemplea.org/wp-content/uploads/2022/10/fol-mejora-satisfaccion-y-motivacion-empleados.webp" alt="Icono de trabajo y formación laboral">
+    <img src="https://pbs.twimg.com/profile_images/1447747463432048644/DFd80lLm_400x400.png" alt="Prevención de riesgos laborales">
+     <button onclick="window.location.href='/web/index.html'">Regresar</button>
 </body>
 </html>
