@@ -1,97 +1,148 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diseño y Desarrollo Web</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; background-color: #000; color: #0f0; }
-        h1, h2 { color: #0f0; }
-        img { margin: 10px; width: 200px; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página de html</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-          button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 12px 30px;
-      font-size: 18px;
-      cursor: pointer;
-      color: #0f0;
-      background: transparent;
-      border: 2px solid #0f0;
-      border-radius: 8px;
-      box-shadow:
-        0 0 5px #0f0,
-        0 0 10px #0f0,
-        0 0 20px #0f0;
-      transition: box-shadow 0.3s ease, color 0.3s ease;
-      z-index: 1000;
+    body {
+      background-color: black;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #41bc4f;
+      padding: 20px;
     }
-    button:hover {
-      color: #b3ffb3;
-      box-shadow:
-        0 0 10px #0f0,
-        0 0 20px #0f0,
-        0 0 40px #0f0,
-        0 0 60px #0f0;
+
+    h1, h2 {
+      text-align: center;
+      margin-bottom: 10px;
     }
-    </style>
+
+    .seccion {
+      border: 2px dashed #41bc4f;
+      padding: 20px;
+      margin-bottom: 40px;
+      animation: aparecer 2s ease-in-out;
+    }
+
+    .decorado {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .media {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    .media img {
+      max-width: 45%;
+      margin: 10px;
+      border: 2px solid #41bc4f;
+    }
+
+    .media iframe {
+      width: 45%;
+      height: 250px;
+      margin: 10px;
+      border: 2px solid #41bc4f;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ol {
+      padding-left: 20px;
+    }
+  </style>
 </head>
 <body>
-    <h1>🌐 ¿Qué es GitHub?</h1>
+
+  <h1>💻 Diseño y Desarrollo Web</h1>
+
+  <!-- SECCIÓN HOSTING -->
   <div class="seccion">
-    <p><strong>GitHub</strong> es una plataforma para guardar y compartir código. Usa un sistema llamado <strong>Git</strong> para llevar el control de versiones (es decir, los cambios en tus archivos).</p>
-    <p>También permite trabajar en equipo, colaborar y publicar tus proyectos de programación, como sitios web en HTML.</p>
+    <div class="decorado">🌐 ¿Qué es el Hosting?</div>
+    <p><strong>El hosting</strong> es un servicio que proporciona espacio en servidores para almacenar los archivos de tu sitio web y que este sea accesible desde Internet. 🧠📡</p>
+
+    <p><strong>Características:</strong></p>
+    <ul>
+      <li>Disponible las 24 horas del día. 🌙☀️</li>
+      <li>Espacio de almacenamiento y transferencia de datos. 💾</li>
+      <li>Soporte técnico, seguridad y respaldos. 🔒</li>
+    </ul>
+
+    <p><strong>¿Cómo funciona?</strong> Tu sitio se guarda en un servidor que se conecta constantemente a Internet. Cuando alguien escribe tu dirección web, accede a los archivos desde ese servidor. ⚙️🌍</p>
+
+    <p><strong>Tipos de hosting:</strong></p>
+    <ul>
+      <li>🔹 Compartido: varios sitios usan el mismo servidor (económico, pero limitado).</li>
+      <li>🔹 VPS: servidor dividido en máquinas virtuales (más control).</li>
+      <li>🔹 Dedicado: el servidor entero para un solo sitio (caro pero potente).</li>
+      <li>🔹 En la nube: varios servidores trabajan juntos (escalable y seguro).</li>
+    </ul>
+
+    <p><strong>Ejemplos de servicios de hosting:</strong></p>
+    <ul>
+      <li>🌐 Hostinger</li>
+      <li>🌐 GoDaddy</li>
+      <li>🌐 Bluehost</li>
+      <li>🌐 InfinityFree (gratuito)</li>
+    </ul>
+
+    <div class="media">
+      <img src="https://www.servnet.mx/hubfs/Blog/Blog_Art%C3%ADculos/Blog_Art%C3%ADculos_2021/Blog_Art%C3%ADculos_MS_Febrero_2021/Blog_Art%C3%ADculos_MS_Febrero_2021_Art6_WH/web-hosting.png" alt="Imagen de hosting">
+      <iframe src="https://www.youtube.com/embed/YZWRvLeT_KU" title="Video sobre Hosting en YouTube" allowfullscreen></iframe>
+    </div>
   </div>
 
-  <h2>🚀 ¿Qué es GitHub Pages?</h2>
+  <!-- SECCIÓN GITHUB -->
   <div class="seccion">
-    <p><strong>GitHub Pages</strong> es un servicio gratuito que ofrece GitHub para alojar sitios web estáticos (HTML, CSS, JS) directamente desde tu repositorio.</p>
-    <p>Ideal para portafolios, tareas, proyectos escolares o personales.</p>
-  </div>
+    <div class="decorado">🐙 ¿Qué es GitHub?</div>
+    <p><strong>GitHub</strong> es una plataforma en línea que usa el sistema de control de versiones Git. Sirve para guardar código, colaborar y trabajar en equipo en proyectos de software. 🚀👨‍💻</p>
 
-  <h2>🛠️ Pasos para subir tu HTML a GitHub</h2>
-  <div class="seccion">
+    <p><strong>Características:</strong></p>
+    <ul>
+      <li>Control de versiones (historial de cambios). 🔄</li>
+      <li>Trabajo colaborativo con ramas (branches). 🤝</li>
+      <li>Almacenamiento y publicación gratuita de proyectos. 💻</li>
+      <li>Compatible con Git, VSCode, y otras herramientas. 🛠️</li>
+    </ul>
+
+    <p><strong>¿Cómo funciona?</strong> Subes tus archivos a un repositorio, que es como una carpeta en línea. Puedes trabajar solo o con otros, y todos los cambios quedan registrados. 📂🧠</p>
+
+    <p><strong>¿Cómo subir una página web a GitHub?</strong> 🌐</p>
     <ol>
-      <li>Crea una cuenta en <a href="https://github.com" target="_blank">github.com</a></li>
-      <li>Haz clic en <code>+ New repository</code> y nómbralo (por ejemplo, <code>mi-sitio</code>)</li>
-      <li>En tu computadora, asegúrate de tener un archivo llamado <code>index.html</code></li>
-      <li>Haz clic en <code>Upload files</code> y sube tu <code>index.html</code> y otros archivos</li>
-      <li>Haz clic en "Commit changes" para guardar</li>
+      <li>Crea una cuenta en GitHub.com.</li>
+      <li>Crea un nuevo repositorio llamado <code>nombreusuario.github.io</code>.</li>
+      <li>Sube tus archivos HTML, CSS y JS.</li>
+      <li>Ve a "Settings" → "Pages" y selecciona la rama a publicar.</li>
+      <li>Tu página estará en línea en: <code>https://nombreusuario.github.io</code></li>
     </ol>
+
+    <div class="media">
+      <img src="https://pages.github.nceas.ucsb.edu/lter/github-workshop/images/github-logo.png" alt="Imagen de GitHub">
+      <iframe src="https://www.youtube.com/embed/sLTNgxxSBR4" title="Video de GitHub Pages en YouTube" allowfullscreen></iframe>
+    </div>
   </div>
-
-  <h2>📢 Activar GitHub Pages</h2>
-  <div class="seccion">
-    <ol>
-      <li>En el repositorio, ve a <strong>Settings</strong> (Configuración)</li>
-      <li>Busca la sección <strong>Pages</strong> o "Pages"</li>
-      <li>En "Source", elige <code>main</code> y la carpeta <code>/ (root)</code></li>
-      <li>Guarda. GitHub te dará un enlace como:<br>
-        <a href="https://tuusuario.github.io/mi-sitio" target="_blank">https://tuusuario.github.io/mi-sitio</a></li>
-    </ol>
-    <p>¡Y listo! Tu sitio HTML está publicado en internet.</p>
-  </div>
-
-  <h2>📄 Archivos comunes que puedes subir</h2>
-  <ul>
-    <li><code>index.html</code> – Página principal</li>
-    <li><code>style.css</code> – Estilos</li>
-    <li><code>script.js</code> – JavaScript</li>
-    <li>Imágenes, fuentes, sonidos, etc.</li>
-  </ul>
-
-  <p>💡 Recuerda: GitHub Pages solo funciona con sitios <strong>estáticos</strong> (sin bases de datos ni PHP).</p>
-
-    <iframe width="560" height="315" 
-      src="https://www.youtube.com/embed/sLTNgxxSBR4" 
-      title="Github" frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen></iframe>
-    
-    <img src="https://cdn.prod.website-files.com/5f5a53e153805db840dae2db/64e79ca5aff2fb7295bfddf9_github-que-es.jpg">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOuVQ0ij1DqJv3YVsM96iZVnbBeaaOreIl0Q&s">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA6QQCHEK0ejPDUNYdZH3f_MZSDx9BZS8j3A&s" alt="Logo Remove.bg">
-     <button onclick="window.location.href='/web/index.html'">Regresar</button>
 
 </body>
 </html>
+
