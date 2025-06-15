@@ -71,6 +71,24 @@
     ol {
       padding-left: 20px;
     }
+
+    .boton-regresar {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background-color: transparent;
+      border: 2px solid #41bc4f;
+      color: #41bc4f;
+      cursor: pointer;
+      border-radius: 10px;
+      animation: aparecer 1s ease-in-out;
+    }
+
+    .boton-regresar:hover {
+      background-color: #41bc4f;
+      color: black;
+    }
   </style>
 </head>
 <body>
@@ -143,6 +161,8 @@
     </div>
   </div>
 
+  <!-- Botón flotante -->
+  <button class="boton-regresar" onclick="window.location.href='/web/index.html'">REGRESAR</button>
+
 </body>
 </html>
-
