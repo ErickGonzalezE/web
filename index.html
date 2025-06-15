@@ -198,10 +198,10 @@
 </head>
 <body>
 
-  <video autoplay loop muted>
-    <source src="fondo.mp4" type="video/mp4" />
-    Tu navegador no soporta el elemento de video.
-  </video>
+ <video autoplay loop muted preload="metadata">
+  <source src="fondo.mp4" type="video/mp4" />
+  Tu navegador no soporta el elemento de video.
+</video>
 
   <div class="encabezado">
     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBxDx2XtWS1kMPkiqss24vLlWNDPrcgIrpq_2Y1oT5GzXOtcvRNtVcKO5ZxYMi5EgQ6G8Fjww36KfvCKIeIsCDxegPR1yF6ePRsy-LZAi0dZaDANyPPwv50TWLPJdd5W7x-m2m0-bXWdqq/s1600/NID.png" alt="Logo" />
@@ -281,10 +281,11 @@
 
 
   <button id="muteBtn">🔇</button>
-  <audio id="musica" autoplay loop>
-    <source src="jump.mp3" type="audio/mp3" />
-    Tu navegador no soporta el elemento de audio.
-  </audio>
+ <audio id="musica" preload="none" loop>
+  <source src="jump.mp3" type="audio/mp3" />
+  Tu navegador no soporta el elemento de audio.
+</audio>
+
 
   <script>
     let musicaIniciada = false;
